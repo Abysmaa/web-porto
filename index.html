@@ -1,0 +1,957 @@
+<!doctype html>
+<html lang="en" data-boot="splash">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Muhammad Abiyu Bisma — Full Stack Web Developer &amp; Data Analyst</title>
+  <meta name="description" content="Muhammad Abiyu Bisma Reswara Oetama. Full Stack Web Developer & Data Analyst. Building high-performance web applications and extracting deep quantitative insights from data." />
+  <meta name="author" content="Muhammad Abiyu Bisma Reswara Oetama" />
+  <meta name="theme-color" content="#080c15" />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Muhammad Abiyu Bisma — Full Stack Web Developer &amp; Data Analyst" />
+  <meta property="og:description" content="Full Stack Web Developer & Data Analyst. Engineering scalable web applications and high-fidelity data intelligence." />
+  
+  <!-- Google Fonts: Chakra Petch for High-Tech HUD & JetBrains Mono for Terminal/Code -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+
+  <a class="skip" href="#top">SKIP TO MAIN CONTENT</a>
+
+  <!-- ══ SVG Duotone Filters for Images ═══════════════════════════ -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <filter id="duoPortrait" color-interpolation-filters="sRGB">
+        <feColorMatrix type="matrix" values=".2126 .7152 .0722 0 0 .2126 .7152 .0722 0 0 .2126 .7152 .0722 0 0 0 0 0 1 0"/>
+        <feComponentTransfer>
+          <feFuncR type="table" tableValues="0.02 0.2"/>
+          <feFuncG type="table" tableValues="0.05 0.85"/>
+          <feFuncB type="table" tableValues="0.12 1.0"/>
+        </feComponentTransfer>
+        <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0.0978 0.3290 0.0332 0 0.6"/>
+      </filter>
+      
+      <filter id="duoCard" color-interpolation-filters="sRGB">
+        <feColorMatrix type="matrix" values=".2126 .7152 .0722 0 0 .2126 .7152 .0722 0 0 .2126 .7152 .0722 0 0 0 0 0 1 0"/>
+        <feComponentTransfer>
+          <feFuncR type="table" tableValues="0.03 0.35"/>
+          <feFuncG type="table" tableValues="0.06 0.65"/>
+          <feFuncB type="table" tableValues="0.12 0.95"/>
+        </feComponentTransfer>
+      </filter>
+    </defs>
+  </svg>
+
+  <!-- ══ Ambient Field Background Layers ══════════════════════════ -->
+  <div class="field" aria-hidden="true">
+    <div class="field__dots"></div>
+    <div class="field__scan"></div>
+    <div class="field__vignette"></div>
+  </div>
+
+  <!-- Dynamic Particle Streaks Canvas -->
+  <canvas id="streaks" aria-hidden="true"></canvas>
+
+  <!-- ══ BOOT SEQUENCE: SPLASH SCREEN ═════════════════════════════ -->
+  <section id="splash" class="boot">
+    <div class="splash__plate">
+      <div class="splash__mark">
+        <!-- High-Tech Animated AB Geometric Monogram -->
+        <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+          <circle class="mark__ring" cx="32" cy="32" r="28" />
+          <circle class="mark__ring mark__ring--2" cx="32" cy="32" r="20" />
+          <!-- Polygonal high tech "AB" glyphs -->
+          <path class="mark__s mark__s--1" d="M18 44 L32 16 L46 44" />
+          <path class="mark__s mark__s--2" d="M23 34 H41" />
+          <path class="mark__s mark__s--3" d="M32 20 H42 C47 20, 47 30, 42 30 H32" />
+          <path class="mark__s mark__s--4" d="M32 30 H45 C50 30, 50 44, 44 44 H32" />
+        </svg>
+        <div class="splash__word">
+          <span class="wordmark">ABIYU BISMA</span>
+          <span class="wordmark__sub" aria-label="System Identity">
+            <span>F</span><span>U</span><span>L</span><span>L</span><span>S</span><span>T</span><span>A</span><span>C</span><span>K</span>
+            <span>&bull;</span>
+            <span>D</span><span>A</span><span>T</span><span>A</span>
+          </span>
+        </div>
+      </div>
+
+      <ol class="splash__lines">
+        <li data-line>MUHAMMAD ABIYU BISMA RESWARA OETAMA · PORTFOLIO</li>
+        <li data-line>EST. 2024 [SYSTEM STATUS: ACTIVE &bull; VER 2.6]</li>
+        <li data-line>FULL STACK WEB DEVELOPMENT &amp; DATA ANALYTICS <span class="tick">◤</span></li>
+      </ol>
+
+      <button id="enter" class="enter" type="button" aria-label="Initialize Portfolio Experience">
+        <span class="enter__rule"></span>
+        <span class="enter__bars"><i></i><i></i><i></i></span>
+        <span class="enter__label">INITIALIZE SYSTEM</span>
+      </button>
+
+      <p class="splash__legal">SYS.TELEMETRY 2026 // CREATED &amp; DEPLOYED BY ABIYU BISMA</p>
+    </div>
+  </section>
+
+  <!-- ══ BOOT SEQUENCE: DIAGNOSTIC LOADER ═════════════════════════ -->
+  <section id="loader" class="boot" hidden>
+    <div class="loader__stack">
+      <div class="loader__ring">
+        <svg viewBox="0 0 120 120" aria-hidden="true">
+          <circle class="ring__track" cx="60" cy="60" r="52" />
+          <circle class="ring__fill" cx="60" cy="60" r="52" />
+        </svg>
+        <span class="loader__pct" id="pct">00</span>
+      </div>
+      <p class="loader__title">SYS.INITIALIZATION.EXP</p>
+      <ul class="loader__readout" id="readout" aria-live="off"></ul>
+    </div>
+  </section>
+
+  <!-- ══ MAIN INTERFACE: SITE ═════════════════════════════════════ -->
+  <div id="site" class="site" aria-hidden="true">
+
+    <!-- ══ Tactical HUD Overlays ═══════════════════════════════════ -->
+    <div class="hud" aria-hidden="true">
+      <span class="hud__c hud__c--tl"></span>
+      <span class="hud__c hud__c--tr"></span>
+      <span class="hud__c hud__c--bl"></span>
+      <span class="hud__c hud__c--br"></span>
+      <div class="hud__rail hud__rail--l">
+        <span>ABIYU BISMA <svg class="sl" viewBox="0 0 14 12" aria-hidden="true"><path d="M3.6 0h2.5L2.5 12H0zM10.9 0h2.5L9.8 12H7.3z"/></svg> FULLSTACK &amp; DATA // EST. 2024</span>
+      </div>
+      <div class="hud__rail hud__rail--r">
+        <span id="hudScroll">SCROLL 000</span>
+      </div>
+    </div>
+
+    <!-- ══ Navigation Bar ══════════════════════════════════════════ -->
+    <header class="nav">
+      <a class="nav__brand" href="#top" aria-label="Abiyu Bisma Home">
+        <svg class="mark mark--sm" viewBox="0 0 64 64" aria-hidden="true">
+          <circle class="mark__ring" cx="32" cy="32" r="28" />
+          <path class="mark__s" d="M18 44 L32 16 L46 44 M23 34 H41" />
+        </svg>
+        <span>ABIYU<i>BISMA</i><svg class="sl" viewBox="0 0 14 12" aria-hidden="true"><path d="M3.6 0h2.5L2.5 12H0zM10.9 0h2.5L9.8 12H7.3z"/></svg></span>
+      </a>
+
+      <nav class="nav__links">
+        <a href="#profile" data-nav>PROFILE</a>
+        <a href="#projects" data-nav>PROJECTS</a>
+        <a href="#experience" data-nav>EXPERIENCE</a>
+        <a href="#stack" data-nav>TECH MATRIX</a>
+        <a href="#insights" data-nav>DATA TELEMETRY</a>
+        <a href="#contact" data-nav>LET'S CHAT</a>
+      </nav>
+
+      <!-- Ambient Audio Synthesizer Button -->
+      <button id="sound" class="nav__sound" type="button" aria-pressed="false" aria-label="Toggle ambient sound synthesizer">
+        <i></i><i></i><i></i><i></i>
+        <span>AMBIENCE.MUTE</span>
+      </button>
+
+      <!-- Mobile Menu Toggle -->
+      <button id="menu" class="nav__menu" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Toggle Navigation Menu">
+        <i></i><i></i><i></i>
+      </button>
+
+      <!-- Scroll Progress Bar -->
+      <span class="nav__prog"><i id="progBar"></i></span>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <nav id="drawer" class="drawer" hidden>
+      <a href="#profile" data-nav>PROFILE</a>
+      <a href="#projects" data-nav>PROJECTS</a>
+      <a href="#experience" data-nav>EXPERIENCE</a>
+      <a href="#stack" data-nav>TECH MATRIX</a>
+      <a href="#insights" data-nav>DATA TELEMETRY</a>
+      <a href="#contact" data-nav>LET'S CHAT</a>
+    </nav>
+
+    <!-- ══ MAIN CONTENT ════════════════════════════════════════════ -->
+    <main id="top">
+
+      <!-- ── HERO SECTION ────────────────────────────────────────── -->
+      <section class="hero">
+        <div class="hero__panel panel">
+          <div class="panel__tag">
+            <span>NOW.ONLINE // READY FOR NEW MISSIONS &amp; CONTRACTS</span>
+            <span class="panel__status-dot"></span>
+          </div>
+          <div class="hero__body">
+            <p class="hero__eyebrow">« BISMA.SYS // ARCHITECT &amp; ANALYST</p>
+            <h1 class="hero__title">
+              <span class="glitch" data-text="FULL STACK &amp;">FULL STACK &amp;</span>
+              <span class="glitch glitch--stroke" data-text="DATA ANALYST">DATA ANALYST</span>
+            </h1>
+            <p class="hero__lede">
+              Muhammad Abiyu Bisma Reswara Oetama — Bridging scalable modern web engineering with actionable data intelligence. Building production-grade full stack applications, responsive architectures, and extracting deep quantitative insights from complex datasets.
+            </p>
+
+            <div class="hero__meta">
+              <span>JAKARTA, ID</span>
+              <em>/</em>
+              <span>WEB ARCHITECTURE</span>
+              <em>/</em>
+              <span>QUANTITATIVE ANALYTICS</span>
+              <em>/</em>
+              <span>EST. 2024</span>
+            </div>
+
+            <!-- Quick Telemetry Stats Strip -->
+            <div class="hero__telemetry">
+              <div class="telem-item">
+                <span class="telem-item__label">DEVELOPMENT CYCLE</span>
+                <span class="telem-item__val">FULL CYCLE (FRONT TO BACK)</span>
+              </div>
+              <div class="telem-item">
+                <span class="telem-item__label">DATA MODELING</span>
+                <span class="telem-item__val">EDA &bull; ETL &bull; PREDICTIVE</span>
+              </div>
+              <div class="telem-item">
+                <span class="telem-item__label">SYSTEM INTEGRATION</span>
+                <span class="telem-item__val">REST &bull; GRAPHQL &bull; WEBSOCKET</span>
+              </div>
+            </div>
+          </div>
+
+          <a class="hero__scroll" href="#profile">
+            <span class="hero__scroll-in"><span class="arrow">&darr;</span> SCROLL.EXTENDED.TELEMETRY</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ── SECTION 01: PROFILE ─────────────────────────────────── -->
+      <section id="profile" class="sec">
+        <div class="sec__head">
+          <span class="sec__idx">01</span>
+          <h2 class="sec__title" data-split>PROFILE // DOSSIER</h2>
+          <span class="sec__rule"></span>
+        </div>
+
+        <div class="grid grid--profile">
+          <!-- Left: Biometric Avatar Dossier Panel -->
+          <div class="panel portrait">
+            <div class="panel__tag">SUBJECT.ID // DEV-0924</div>
+            <figure class="shot shot--portrait">
+              <!-- Real Portrait Photo with HUD Tactical Overlays -->
+              <div class="portrait-frame">
+                <img
+                  class="portrait-photo"
+                  src="./media/profile.jpg"
+                  alt="Muhammad Abiyu Bisma Reswara Oetama — Full Stack Developer & Data Analyst"
+                  loading="eager"
+                  decoding="async"
+                />
+                <!-- Biometric HUD Overlay -->
+                <div class="portrait-hud">
+                  <span class="portrait-bracket portrait-bracket--tl"></span>
+                  <span class="portrait-bracket portrait-bracket--tr"></span>
+                  <span class="portrait-bracket portrait-bracket--bl"></span>
+                  <span class="portrait-bracket portrait-bracket--br"></span>
+                  <span class="portrait-tag portrait-tag--top"><i></i>SUBJECT.VERIFIED</span>
+                  <span class="portrait-tag portrait-tag--bottom">ABIYU BISMA &bull; JAKARTA, ID</span>
+                  <span class="portrait-tag portrait-tag--quote">"WORKS ON MY MACHINE!"</span>
+                </div>
+              </div>
+              <span class="shot__scan"></span>
+            </figure>
+            <div class="portrait__strip">
+              <span>M. ABIYU BISMA R. O.</span>
+              <span>DEV &amp; ANALYST</span>
+            </div>
+          </div>
+
+          <!-- Right: Dossier Summary & Metrics -->
+          <div class="panel panel--lg">
+            <div class="panel__tag">DOSSIER // ARCHITECTURAL DNA</div>
+            <div class="panel__body prose">
+              <p>
+                Saya adalah <strong>Full Stack Web Developer &amp; Data Analyst</strong> yang berdedikasi membangun jembatan antara rekayasa perangkat lunak modern yang tangguh dan keakuratan analisis data bisnis tingkat lanjut.
+              </p>
+              <p>
+                Dalam ranah <strong>Full Stack Web</strong>, saya merancang dan mengimplementasikan aplikasi end-to-end: dari antarmuka modern yang responsif, interaktif, dan aksesibel, hingga arsitektur backend, database relational/NoSQL, dan API terdistribusi yang aman serta berperforma tinggi.
+              </p>
+              <p>
+                Dalam ranah <strong>Analisis Data</strong>, saya memproses data mentah menjadi wawasan strategis melalui <em>Exploratory Data Analysis (EDA)</em>, pembersihan data terstruktur, visualisasi interaktif, hingga pemodelan statistik &amp; prediksi tren bisnis untuk mendukung pengambilan keputusan berbasis fakta numerik.
+              </p>
+
+              <!-- Telemetry Stats Grid -->
+              <div class="stats stats--matrix">
+                <div>
+                  <dt>CORE STACK</dt>
+                  <dd>JS / TS &bull; PYTHON &bull; SQL</dd>
+                </div>
+                <div>
+                  <dt>WEB FRAMEWORKS</dt>
+                  <dd>REACT &bull; NEXT.JS &bull; NODE &bull; FASTAPI</dd>
+                </div>
+                <div>
+                  <dt>DATA SUITE</dt>
+                  <dd>PANDAS &bull; BIGQUERY &bull; TABLEAU</dd>
+                </div>
+                <div>
+                  <dt>DEPLOYMENT &amp; TOOLS</dt>
+                  <dd>DOCKER &bull; GIT &bull; LINUX &bull; CLOUD</dd>
+                </div>
+              </div>
+
+              <div class="dl-row">
+                <a class="dl" href="#contact">
+                  <span class="dl__k">CONTACT INITIATION</span>
+                  <span class="dl__v">LET'S COLLABORATE &rarr;</span>
+                </a>
+                <a class="dl" href="#projects">
+                  <span class="dl__k">SYSTEM ARCHIVES</span>
+                  <span class="dl__v">EXPLORE PROJECTS &darr;</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SECTION 02: PROJECTS ────────────────────────────────── -->
+      <section id="projects" class="sec">
+        <div class="sec__head">
+          <span class="sec__idx">02</span>
+          <h2 class="sec__title" data-split>CLASSIFIED PROJECTS</h2>
+          <span class="sec__rule"></span>
+        </div>
+        <p class="sec__lede">Production web applications, interactive dashboards, and data analytics systems.</p>
+
+        <!-- Category Filter Tabs -->
+        <div class="rolls" role="tablist" aria-label="Project Categories">
+          <button class="roll" type="button" data-filter="all" aria-pressed="true">
+            <span class="roll__no">01</span>
+            <span class="roll__name">ALL INVENTORIES</span>
+          </button>
+          <button class="roll" type="button" data-filter="web" aria-pressed="false">
+            <span class="roll__no">02</span>
+            <span class="roll__name">FULLSTACK WEB</span>
+          </button>
+          <button class="roll" type="button" data-filter="data" aria-pressed="false">
+            <span class="roll__no">03</span>
+            <span class="roll__name">HCI &amp; UX RESEARCH</span>
+          </button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="bands" id="workGrid">
+
+          <!-- Project 1: Dyacara Web — Laravel E-Commerce with Midtrans -->
+          <article class="band panel" data-category="web">
+            <div class="panel__tag">
+              <span class="band__id">PRJ-01 // FULLSTACK E-COMMERCE &amp; PAYMENT GATEWAY</span>
+              <span class="band__rule"></span>
+              <span class="band__hint">SOURCE ON GITHUB</span>
+            </div>
+            
+            <div class="shot shot--project">
+              <svg class="schema" viewBox="0 0 1200 440" preserveAspectRatio="xMidYMid slice" aria-label="Dyacara Web — E-Commerce Architecture">
+                <rect width="1200" height="440" fill="#0b121e"/>
+                <path d="M0 60 H1200 M0 120 H1200 M0 180 H1200 M0 240 H1200 M0 300 H1200 M0 360 H1200" stroke="#17243b" stroke-width="1"/>
+                <path d="M150 0 V440 M300 0 V440 M450 0 V440 M600 0 V440 M750 0 V440 M900 0 V440 M1050 0 V440" stroke="#17243b" stroke-width="1"/>
+
+                <!-- Architecture Flow: Browser → Laravel → DB + Midtrans -->
+                <g transform="translate(80, 150)">
+                  <rect width="170" height="130" rx="4" fill="#111c2e" stroke="#00f0ff" stroke-width="1.5"/>
+                  <text x="16" y="30" fill="#00f0ff" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">CLIENT LAYER</text>
+                  <text x="16" y="56" fill="#c4d1e8" font-family="'JetBrains Mono', monospace" font-size="10">Blade Templates</text>
+                  <text x="16" y="76" fill="#c4d1e8" font-family="'JetBrains Mono', monospace" font-size="10">Bootstrap 5 UI</text>
+                  <text x="16" y="96" fill="#c4d1e8" font-family="'JetBrains Mono', monospace" font-size="10">Vanilla JS Cart</text>
+                  <text x="16" y="116" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="9">RESPONSIVE / WCAG</text>
+                </g>
+                <path d="M260 215 H350" stroke="#00f0ff" stroke-width="2" stroke-dasharray="5 4"/>
+                <polygon points="350,211 362,215 350,219" fill="#00f0ff"/>
+
+                <g transform="translate(370, 140)">
+                  <rect width="200" height="155" rx="4" fill="#111c2e" stroke="#fca311" stroke-width="1.5"/>
+                  <text x="16" y="30" fill="#fca311" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">LARAVEL BACKEND</text>
+                  <text x="16" y="56" fill="#c4d1e8" font-family="'JetBrains Mono', monospace" font-size="10">MVC Architecture</text>
+                  <text x="16" y="76" fill="#c4d1e8" font-family="'JetBrains Mono', monospace" font-size="10">Eloquent ORM</text>
+                  <text x="16" y="96" fill="#c4d1e8" font-family="'JetBrains Mono', monospace" font-size="10">Auth (Breeze)</text>
+                  <text x="16" y="116" fill="#c4d1e8" font-family="'JetBrains Mono', monospace" font-size="10">Product &amp; Order Mgmt</text>
+                  <text x="16" y="136" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="9">RESTful Routing</text>
+                </g>
+
+                <!-- Two arrows from Laravel to MySQL and Midtrans -->
+                <path d="M580 200 H680" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="5 4"/>
+                <polygon points="680,196 692,200 680,204" fill="#8b5cf6"/>
+                <path d="M580 260 H680" stroke="#ff2a85" stroke-width="2" stroke-dasharray="5 4"/>
+                <polygon points="680,256 692,260 680,264" fill="#ff2a85"/>
+
+                <g transform="translate(700, 140)">
+                  <rect width="170" height="110" rx="4" fill="#111c2e" stroke="#8b5cf6" stroke-width="1.5"/>
+                  <text x="16" y="30" fill="#8b5cf6" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">MYSQL DATABASE</text>
+                  <text x="16" y="56" fill="#c4d1e8" font-family="'JetBrains Mono', monospace" font-size="10">Products / Orders</text>
+                  <text x="16" y="76" fill="#c4d1e8" font-family="'JetBrains Mono', monospace" font-size="10">Users / Cart Items</text>
+                  <text x="16" y="96" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="9">Migrations &amp; Seeders</text>
+                </g>
+
+                <g transform="translate(700, 270)">
+                  <rect width="170" height="110" rx="4" fill="#111c2e" stroke="#ff2a85" stroke-width="1.5"/>
+                  <text x="16" y="30" fill="#ff2a85" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">MIDTRANS</text>
+                  <text x="16" y="56" fill="#c4d1e8" font-family="'JetBrains Mono', monospace" font-size="10">Payment Gateway</text>
+                  <text x="16" y="76" fill="#c4d1e8" font-family="'JetBrains Mono', monospace" font-size="10">Snap UI / Webhook</text>
+                  <text x="16" y="96" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="9">SANDBOX + LIVE KEYS</text>
+                </g>
+
+                <text x="80" y="48" fill="#f1f5f9" font-family="'Chakra Petch', sans-serif" font-size="16" font-weight="600">DYACARA // FULL-STACK E-COMMERCE PLATFORM</text>
+                <text x="80" y="410" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="9" letter-spacing="1.5">STACK: LARAVEL 11 + BLADE + MYSQL + MIDTRANS PAYMENT</text>
+              </svg>
+              <span class="shot__scan"></span>
+            </div>
+
+            <div class="band__body">
+              <div class="band__lead">
+                <h3 class="band__name">DYACARA // LARAVEL E-COMMERCE</h3>
+                <div class="band__ticks">
+                  <span class="band__tick is-on"></span>
+                  <span class="band__tick is-on"></span>
+                  <span class="band__tick is-on"></span>
+                  <span class="band__tick is-on"></span>
+                </div>
+              </div>
+
+              <div class="band__copy">
+                <p class="band__desc">
+                  Platform e-commerce full-stack berbasis Laravel 11 dengan arsitektur MVC lengkap. Fitur mencakup manajemen produk &amp; stok, sistem autentikasi Breeze, keranjang belanja dinamis, checkout terintegrasi Midtrans (Snap UI + webhook), serta panel admin untuk pemantauan pesanan secara real-time.
+                </p>
+              </div>
+
+              <div class="band__actions">
+                <a class="band__btn band__btn--primary" href="https://github.com/Abysmaa/Dyacara_web" target="_blank" rel="noopener noreferrer" aria-label="View Dyacara source code on GitHub">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.929.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                  GITHUB SOURCE
+                </a>
+              </div>
+
+              <div class="card__tags">
+                <span>LARAVEL 11</span>
+                <span>PHP</span>
+                <span>BLADE</span>
+                <span>MYSQL</span>
+                <span>MIDTRANS</span>
+                <span>BOOTSTRAP 5</span>
+                <span>ELOQUENT ORM</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: six-monkeys-web — Laravel Café / Event Management -->
+          <article class="band panel" data-category="web">
+            <div class="panel__tag">
+              <span class="band__id">PRJ-02 // WEB APP &amp; MENU MANAGEMENT SYSTEM</span>
+              <span class="band__rule"></span>
+              <span class="band__hint">FULL-STACK WEB APP</span>
+            </div>
+            
+            <div class="shot shot--project">
+              <svg class="schema" viewBox="0 0 1200 440" preserveAspectRatio="xMidYMid slice" aria-label="Six Monkeys Web — Café Management System">
+                <rect width="1200" height="440" fill="#0a101b"/>
+                <path d="M0 60 H1200 M0 120 H1200 M0 180 H1200 M0 240 H1200 M0 300 H1200 M0 360 H1200" stroke="#1a273e" stroke-width="1"/>
+
+                <!-- Menu Card UI Mockup -->
+                <g transform="translate(80, 110)">
+                  <rect width="240" height="220" rx="6" fill="#111c2e" stroke="#00f0ff" stroke-width="1.5"/>
+                  <rect x="0" y="0" width="240" height="100" rx="6" fill="#1a2d4a"/>
+                  <!-- Coffee cup icon mockup -->
+                  <text x="100" y="65" fill="#00f0ff" font-family="'Chakra Petch', sans-serif" font-size="36" text-anchor="middle">☕</text>
+                  <text x="20" y="130" fill="#f1f5f9" font-family="'Chakra Petch', sans-serif" font-size="13" font-weight="600">Espresso Classico</text>
+                  <text x="20" y="152" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="9">Single Origin Arabica</text>
+                  <text x="20" y="175" fill="#00f0ff" font-family="'Chakra Petch', sans-serif" font-size="14" font-weight="700">Rp 35.000</text>
+                  <rect x="20" y="190" width="90" height="24" rx="4" fill="#00f0ff" opacity="0.15" stroke="#00f0ff" stroke-width="1"/>
+                  <text x="40" y="207" fill="#00f0ff" font-family="'JetBrains Mono', monospace" font-size="9">ADD TO ORDER</text>
+                </g>
+
+                <g transform="translate(350, 110)">
+                  <rect width="240" height="220" rx="6" fill="#111c2e" stroke="#fca311" stroke-width="1.5"/>
+                  <rect x="0" y="0" width="240" height="100" rx="6" fill="#2a1d0e"/>
+                  <text x="100" y="65" fill="#fca311" font-family="'Chakra Petch', sans-serif" font-size="36" text-anchor="middle">🧇</text>
+                  <text x="20" y="130" fill="#f1f5f9" font-family="'Chakra Petch', sans-serif" font-size="13" font-weight="600">Belgian Waffle Plate</text>
+                  <text x="20" y="152" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="9">Served with whipped cream</text>
+                  <text x="20" y="175" fill="#fca311" font-family="'Chakra Petch', sans-serif" font-size="14" font-weight="700">Rp 55.000</text>
+                  <rect x="20" y="190" width="90" height="24" rx="4" fill="#fca311" opacity="0.15" stroke="#fca311" stroke-width="1"/>
+                  <text x="40" y="207" fill="#fca311" font-family="'JetBrains Mono', monospace" font-size="9">ADD TO ORDER</text>
+                </g>
+
+                <!-- Admin Panel Mockup on Right -->
+                <g transform="translate(660, 90)">
+                  <rect width="460" height="260" rx="6" fill="#0d1826" stroke="#233654" stroke-width="1.5"/>
+                  <text x="20" y="30" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="9" letter-spacing="2">ADMIN DASHBOARD // ORDER MANAGEMENT</text>
+                  <line x1="0" y1="42" x2="460" y2="42" stroke="#1e2f49" stroke-width="1"/>
+                  <!-- Table rows -->
+                  <text x="20" y="68" fill="#00f0ff" font-family="'JetBrains Mono', monospace" font-size="10">#ORD-241  TABLE 04  Rp 125.000  COMPLETED</text>
+                  <text x="20" y="92" fill="#fca311" font-family="'JetBrains Mono', monospace" font-size="10">#ORD-242  TABLE 07  Rp 90.000   IN PROGRESS</text>
+                  <text x="20" y="116" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="10">#ORD-243  TABLE 02  Rp 210.000  PENDING</text>
+                  <text x="20" y="140" fill="#00f0ff" font-family="'JetBrains Mono', monospace" font-size="10">#ORD-244  TABLE 11  Rp 75.000   COMPLETED</text>
+                  <line x1="0" y1="155" x2="460" y2="155" stroke="#1e2f49" stroke-width="1"/>
+                  <text x="20" y="185" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="9">DAILY REVENUE</text>
+                  <text x="20" y="210" fill="#f1f5f9" font-family="'Chakra Petch', sans-serif" font-size="22" font-weight="700">Rp 4.820.000</text>
+                  <text x="220" y="185" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="9">ACTIVE TABLES</text>
+                  <text x="220" y="210" fill="#00f0ff" font-family="'Chakra Petch', sans-serif" font-size="22" font-weight="700">07 / 12</text>
+                </g>
+
+                <text x="80" y="50" fill="#f1f5f9" font-family="'Chakra Petch', sans-serif" font-size="16" font-weight="600">SIX MONKEYS // CAFÉ &amp; MENU MANAGEMENT SYSTEM</text>
+                <text x="80" y="410" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="9" letter-spacing="1.5">STACK: LARAVEL + BLADE + MYSQL + ROLE-BASED AUTH</text>
+              </svg>
+              <span class="shot__scan"></span>
+            </div>
+
+            <div class="band__body">
+              <div class="band__lead">
+                <h3 class="band__name">SIX MONKEYS // CAFÉ MANAGEMENT SYSTEM</h3>
+                <div class="band__ticks">
+                  <span class="band__tick is-on"></span>
+                  <span class="band__tick is-on"></span>
+                  <span class="band__tick is-on"></span>
+                  <span class="band__tick"></span>
+                </div>
+              </div>
+
+              <div class="band__copy">
+                <p class="band__desc">
+                  Sistem manajemen kafe berbasis web dengan fitur katalog menu dinamis, pemrosesan pesanan per meja, dan panel admin dengan kontrol berbasis peran (role-based access). Dibangun di atas Laravel dengan Blade templating, MySQL, dan autentikasi multi-level untuk kasir, dapur, dan manajer.
+                </p>
+              </div>
+
+              <div class="band__actions">
+                <a class="band__btn band__btn--primary" href="https://github.com/Abysmaa/six-monkeys-web" target="_blank" rel="noopener noreferrer" aria-label="View Six Monkeys source code on GitHub">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.929.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                  GITHUB SOURCE
+                </a>
+              </div>
+
+              <div class="card__tags">
+                <span>LARAVEL</span>
+                <span>PHP</span>
+                <span>BLADE</span>
+                <span>MYSQL</span>
+                <span>BOOTSTRAP</span>
+                <span>ROLE-BASED AUTH</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: IMK-bro — Human-Computer Interaction Study -->
+          <article class="band panel" data-category="web data">
+            <div class="panel__tag">
+              <span class="band__id">PRJ-03 // UI/UX &amp; HUMAN-COMPUTER INTERACTION</span>
+              <span class="band__rule"></span>
+              <span class="band__hint">ACADEMIC PROJECT</span>
+            </div>
+            
+            <div class="shot shot--project">
+              <svg class="schema" viewBox="0 0 1200 440" preserveAspectRatio="xMidYMid slice" aria-label="IMK-bro Human Computer Interaction">
+                <rect width="1200" height="440" fill="#080e18"/>
+                <path d="M0 60 H1200 M0 120 H1200 M0 180 H1200 M0 240 H1200 M0 300 H1200 M0 360 H1200" stroke="#162338" stroke-width="1"/>
+
+                <!-- HCI Model: User ↔ Interface ↔ System -->
+                <!-- User Node -->
+                <g transform="translate(100, 165)">
+                  <circle cx="60" cy="60" r="55" fill="#0d1826" stroke="#00f0ff" stroke-width="1.5"/>
+                  <text x="60" y="50" fill="#00f0ff" font-family="'Chakra Petch', sans-serif" font-size="28" text-anchor="middle">👤</text>
+                  <text x="60" y="78" fill="#c4d1e8" font-family="'JetBrains Mono', monospace" font-size="9" text-anchor="middle">USER</text>
+                  <text x="60" y="92" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="8" text-anchor="middle">MENTAL MODEL</text>
+                </g>
+
+                <!-- Bidirectional Arrow: User ↔ Interface -->
+                <path d="M218 225 H360" stroke="#00f0ff" stroke-width="2" stroke-dasharray="5 4"/>
+                <polygon points="360,221 372,225 360,229" fill="#00f0ff"/>
+                <polygon points="218,221 206,225 218,229" fill="#00f0ff"/>
+                <text x="270" y="215" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="8">INPUT / FEEDBACK</text>
+
+                <!-- Interface Node -->
+                <g transform="translate(370, 120)">
+                  <rect width="200" height="200" rx="6" fill="#0f1d30" stroke="#fca311" stroke-width="1.5"/>
+                  <text x="100" y="30" fill="#fca311" font-family="'JetBrains Mono', monospace" font-size="10" text-anchor="middle" font-weight="700">INTERFACE</text>
+                  <!-- Wireframe elements -->
+                  <rect x="20" y="50" width="160" height="20" rx="3" fill="#1a2d4a" stroke="#2a3f63" stroke-width="1"/>
+                  <text x="30" y="65" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="8">NAVIGATION BAR</text>
+                  <rect x="20" y="80" width="70" height="50" rx="3" fill="#1a2d4a" stroke="#2a3f63" stroke-width="1"/>
+                  <rect x="100" y="80" width="80" height="50" rx="3" fill="#1a2d4a" stroke="#2a3f63" stroke-width="1"/>
+                  <rect x="20" y="140" width="160" height="30" rx="3" fill="#00f0ff" opacity="0.1" stroke="#00f0ff" stroke-width="1"/>
+                  <text x="100" y="160" fill="#00f0ff" font-family="'JetBrains Mono', monospace" font-size="9" text-anchor="middle">CTA BUTTON</text>
+                  <text x="100" y="185" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="8" text-anchor="middle">USABILITY HEURISTICS</text>
+                </g>
+
+                <!-- Bidirectional Arrow: Interface ↔ System -->
+                <path d="M580 225 H700" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="5 4"/>
+                <polygon points="700,221 712,225 700,229" fill="#8b5cf6"/>
+                <polygon points="580,221 568,225 580,229" fill="#8b5cf6"/>
+                <text x="615" y="215" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="8">PROCESS / RESPONSE</text>
+
+                <!-- System Node -->
+                <g transform="translate(715, 160)">
+                  <rect width="200" height="130" rx="6" fill="#0d1826" stroke="#8b5cf6" stroke-width="1.5"/>
+                  <text x="100" y="30" fill="#8b5cf6" font-family="'JetBrains Mono', monospace" font-size="10" text-anchor="middle" font-weight="700">SYSTEM</text>
+                  <text x="20" y="60" fill="#c4d1e8" font-family="'JetBrains Mono', monospace" font-size="9">Task Analysis</text>
+                  <text x="20" y="80" fill="#c4d1e8" font-family="'JetBrains Mono', monospace" font-size="9">Cognitive Load Eval.</text>
+                  <text x="20" y="100" fill="#c4d1e8" font-family="'JetBrains Mono', monospace" font-size="9">Error Prevention</text>
+                  <text x="20" y="120" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="8">ISO 9241 / NIELSEN</text>
+                </g>
+
+                <!-- Usability Metrics Bottom -->
+                <g transform="translate(950, 140)">
+                  <rect width="180" height="155" rx="4" fill="#111c2e" stroke="#233654" stroke-width="1"/>
+                  <text x="16" y="28" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="9" letter-spacing="1">USABILITY METRICS</text>
+                  <text x="16" y="52" fill="#00f0ff" font-family="'Chakra Petch', sans-serif" font-size="14" font-weight="700">SUS SCORE</text>
+                  <text x="16" y="72" fill="#f1f5f9" font-family="'Chakra Petch', sans-serif" font-size="20" font-weight="700">82.5 / 100</text>
+                  <text x="16" y="100" fill="#fca311" font-family="'Chakra Petch', sans-serif" font-size="14" font-weight="700">TASK SUCCESS</text>
+                  <text x="16" y="120" fill="#f1f5f9" font-family="'Chakra Petch', sans-serif" font-size="20" font-weight="700">91.4%</text>
+                  <text x="16" y="148" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="8">n=20 PARTICIPANTS</text>
+                </g>
+
+                <text x="80" y="48" fill="#f1f5f9" font-family="'Chakra Petch', sans-serif" font-size="16" font-weight="600">IMK-BRO // HUMAN-COMPUTER INTERACTION STUDY</text>
+                <text x="80" y="410" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="9" letter-spacing="1.5">STACK: HTML + CSS + JS • USER RESEARCH • USABILITY TESTING</text>
+              </svg>
+              <span class="shot__scan"></span>
+            </div>
+
+            <div class="band__body">
+              <div class="band__lead">
+                <h3 class="band__name">IMK-BRO // HCI &amp; USABILITY STUDY</h3>
+                <div class="band__ticks">
+                  <span class="band__tick is-on"></span>
+                  <span class="band__tick is-on"></span>
+                  <span class="band__tick is-on"></span>
+                  <span class="band__tick"></span>
+                </div>
+              </div>
+
+              <div class="band__copy">
+                <p class="band__desc">
+                  Proyek studi Interaksi Manusia-Komputer (IMK) yang menerapkan prinsip desain berbasis pengguna, evaluasi heuristik Nielsen, dan pengujian usabilitas terstruktur. Menganalisis pola interaksi, beban kognitif, dan faktor aksesibilitas untuk menghasilkan antarmuka web yang intuitif dan berpusat pada pengguna.
+                </p>
+              </div>
+
+              <div class="band__actions">
+                <a class="band__btn band__btn--primary" href="https://github.com/Abysmaa/IMK-bro" target="_blank" rel="noopener noreferrer" aria-label="View IMK-bro source code on GitHub">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.929.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                  GITHUB SOURCE
+                </a>
+              </div>
+
+              <div class="card__tags">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JAVASCRIPT</span>
+                <span>USER RESEARCH</span>
+                <span>USABILITY TESTING</span>
+                <span>HCI PRINCIPLES</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ── SECTION 03: EXPERIENCE ──────────────────────────────── -->
+      <section id="experience" class="sec">
+        <div class="sec__head">
+          <span class="sec__idx">03</span>
+          <h2 class="sec__title" data-split>EXPERIENCE // SYSTEM LOGS</h2>
+          <span class="sec__rule"></span>
+        </div>
+        <p class="sec__lede">Rekam jejak profesional dalam rekayasa aplikasi web dan analitik data.</p>
+
+        <div class="panel logs" id="expList">
+
+          <!-- Log Item 1 -->
+          <div class="log">
+            <div class="log__when">
+              <span class="log__from">2024</span>
+              <span class="log__dash"></span>
+              <span class="log__to">PRESENT</span>
+            </div>
+            <div class="log__main">
+              <h3 class="log__role">FULL STACK DEVELOPER &amp; DATA ANALYST</h3>
+              <p class="log__org">INDEPENDENT CONTRACTOR &bull; FREELANCE ARCHITECT</p>
+              <p class="log__desc">
+                Merancang dan meluncurkan solusi web custom berkinerja tinggi untuk berbagai klien, mengintegrasikan sistem autentikasi, database PostgreSQL/MongoDB, serta dashboard pelaporan analitik berbasis data nyata untuk optimalisasi konversi dan automasi operasional.
+              </p>
+            </div>
+            <div class="log__where">
+              <span class="log__loc">REMOTE / ID</span>
+              <span class="log__idx">#01</span>
+            </div>
+          </div>
+
+          <!-- Log Item 2 -->
+          <div class="log">
+            <div class="log__when">
+              <span class="log__from">2023</span>
+              <span class="log__dash"></span>
+              <span class="log__to">2024</span>
+            </div>
+            <div class="log__main">
+              <h3 class="log__role">DATA ANALYST &amp; FRONTEND SPECIALIST</h3>
+              <p class="log__org">DIGITAL INITIATIVES &amp; LABS</p>
+              <p class="log__desc">
+                Melakukan analisis statistik eksploratif (EDA) terhadap ratusan ribu entri data, menyusun model segmentasi pengguna, serta mengonversikan temuan data menjadi antarmuka visualisasi web interaktif yang mudah dipahami oleh stakeholder manajemen dan non-teknis.
+              </p>
+            </div>
+            <div class="log__where">
+              <span class="log__loc">JAKARTA / ID</span>
+              <span class="log__idx">#02</span>
+            </div>
+          </div>
+
+          <!-- Log Item 3 -->
+          <div class="log">
+            <div class="log__when">
+              <span class="log__from">2022</span>
+              <span class="log__dash"></span>
+              <span class="log__to">2023</span>
+            </div>
+            <div class="log__main">
+              <h3 class="log__role">WEB SOFTWARE DEVELOPER</h3>
+              <p class="log__org">SOFTWARE DEVELOPMENT PROJECTS</p>
+              <p class="log__desc">
+                Membangun antarmuka web modern dengan fokus pada performa web vitals, aksesibilitas semantik, integrasi RESTful API, dan pengujian unit pengujian fungsional untuk memastikan skalabilitas kode dan pengalaman pengguna yang mulus.
+              </p>
+            </div>
+            <div class="log__where">
+              <span class="log__loc">INDONESIA</span>
+              <span class="log__idx">#03</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── SECTION 04: TECH MATRIX ─────────────────────────────── -->
+      <section id="stack" class="sec">
+        <div class="sec__head">
+          <span class="sec__idx">04</span>
+          <h2 class="sec__title" data-split>TECH MATRIX // EQUIPMENT</h2>
+          <span class="sec__rule"></span>
+        </div>
+        <p class="sec__lede">Keahlian teknis, bahasa pemrograman, framework, dan perkakas data.</p>
+
+        <div class="grid grid--stack" id="stackGrid">
+
+          <!-- Tile 1: Frontend Architecture -->
+          <div class="panel tile" style="--lvl: 94%;">
+            <span class="tile__k">SYS.01 // CLIENT-SIDE</span>
+            <h3 class="tile__v">FRONTEND DEVELOPMENT</h3>
+            <p class="tile__d">
+              React, Next.js, TypeScript, JavaScript (ES6+), Vanilla CSS, Tailwind, Responsive HUD Design, Web Vitals &amp; Performance.
+            </p>
+            <div class="tile__bar"><i></i></div>
+            <div class="tile__meta">
+              <span>PROFICIENCY</span>
+              <span>94%</span>
+            </div>
+          </div>
+
+          <!-- Tile 2: Backend & Systems -->
+          <div class="panel tile" style="--lvl: 90%;">
+            <span class="tile__k">SYS.02 // SERVER-SIDE</span>
+            <h3 class="tile__v">BACKEND &amp; APIS</h3>
+            <p class="tile__d">
+              Node.js, Express, Python (FastAPI / Flask), RESTful API Engineering, GraphQL, WebSockets, JWT Auth, Microservices.
+            </p>
+            <div class="tile__bar"><i></i></div>
+            <div class="tile__meta">
+              <span>PROFICIENCY</span>
+              <span>90%</span>
+            </div>
+          </div>
+
+          <!-- Tile 3: Data Analytics & Science -->
+          <div class="panel tile" style="--lvl: 92%;">
+            <span class="tile__k">SYS.03 // DATA INTELLIGENCE</span>
+            <h3 class="tile__v">DATA ANALYSIS &amp; BI</h3>
+            <p class="tile__d">
+              Python (Pandas, NumPy, Scikit-Learn), SQL (PostgreSQL, BigQuery), Data Cleansing, EDA, Tableau, PowerBI, Statistical Modeling.
+            </p>
+            <div class="tile__bar"><i></i></div>
+            <div class="tile__meta">
+              <span>PROFICIENCY</span>
+              <span>92%</span>
+            </div>
+          </div>
+
+          <!-- Tile 4: Database & DevOps -->
+          <div class="panel tile" style="--lvl: 88%;">
+            <span class="tile__k">SYS.04 // INFRASTRUCTURE</span>
+            <h3 class="tile__v">DATABASE &amp; DEVOPS</h3>
+            <p class="tile__d">
+              PostgreSQL, MySQL, MongoDB, Redis, Docker, Git / GitHub Workflows, CI/CD, Linux Server Management, Cloud Deployments.
+            </p>
+            <div class="tile__bar"><i></i></div>
+            <div class="tile__meta">
+              <span>PROFICIENCY</span>
+              <span>88%</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── SECTION 05: DATA TELEMETRY / INSIGHTS ───────────────── -->
+      <section id="insights" class="sec">
+        <div class="sec__head">
+          <span class="sec__idx">05</span>
+          <h2 class="sec__title" data-split>LIVE DATA TELEMETRY</h2>
+          <span class="sec__rule"></span>
+        </div>
+        <p class="sec__lede">Simulasi visualisasi data interaktif &amp; analisis anomali frekuensi real-time.</p>
+
+        <div class="panel telemetry-card">
+          <div class="panel__tag">
+            <span>DATA.MONITOR // STREAMING PERFORMANCE SENSORS</span>
+            <span class="telemetry-live-badge">&bull; LIVE METRICS</span>
+          </div>
+
+          <div class="telemetry-canvas-wrap">
+            <canvas id="telemetryCanvas" width="1100" height="280"></canvas>
+          </div>
+
+          <div class="telemetry-controls">
+            <div class="telemetry-control-stat">
+              <span class="t-label">DATA THROUGHPUT</span>
+              <span class="t-value" id="tThroughput">2,840 REQ/S</span>
+            </div>
+            <div class="telemetry-control-stat">
+              <span class="t-label">LATENCY P99</span>
+              <span class="t-value" id="tLatency">18.4 MS</span>
+            </div>
+            <div class="telemetry-control-stat">
+              <span class="t-label">DATASET CLEANLINESS</span>
+              <span class="t-value" id="tAccuracy">99.82%</span>
+            </div>
+            <div class="telemetry-control-stat">
+              <span class="t-label">ANOMALIES DETECTED</span>
+              <span class="t-value text-accent" id="tAnomalies">0 ZERO</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SECTION 06: CONTACT / SECURE TRANSMISSION ──────────── -->
+      <section id="contact" class="sec sec--contact">
+        <div class="sec__head">
+          <span class="sec__idx">06</span>
+          <h2 class="sec__title" data-split>SECURE TRANSMISSION // CONTACT</h2>
+          <span class="sec__rule"></span>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ══ FOOTER INTERFACE ════════════════════════════════════════ -->
+    <footer class="foot">
+      <!-- Watermark Background Text -->
+      <div class="foot__back" aria-hidden="true">
+        <svg class="mark mark--still" viewBox="0 0 64 64">
+          <circle class="mark__ring" cx="32" cy="32" r="28" />
+          <path class="mark__s" d="M18 44 L32 16 L46 44 M23 34 H41" />
+        </svg>
+        <span>ABIYU BISMA</span>
+        <svg class="sl" viewBox="0 0 14 12" aria-hidden="true"><path d="M3.6 0h2.5L2.5 12H0zM10.9 0h2.5L9.8 12H7.3z"/></svg>
+      </div>
+
+      <div class="foot__card panel">
+        
+        <!-- Footer Lead -->
+        <div class="foot__lead">
+          <p class="foot__k">
+            ABIYU BISMA <svg class="sl" viewBox="0 0 14 12" aria-hidden="true"><path d="M3.6 0h2.5L2.5 12H0zM10.9 0h2.5L9.8 12H7.3z"/></svg> EST. 2024
+          </p>
+          <h3 class="foot__title">LET'S BUILD SOMETHING EXTRAORDINARY.</h3>
+          <p class="foot__sub">
+            Full Stack Web Developer &amp; Data Analyst<br />
+            Jakarta, Indonesia &bull; Open for Remote &amp; Global Opportunities
+          </p>
+          <button class="foot__cta" type="button" id="chatOpen">
+            INITIALIZE CHAT <svg class="arrow" viewBox="0 0 24 12" aria-hidden="true"><path d="M0 6h20M15 1l5 5-5 5"/></svg>
+          </button>
+        </div>
+
+        <!-- Footer Columns Links -->
+        <div class="foot__cols">
+          <div class="foot__col">
+            <span class="foot__h">NAVIGATION</span>
+            <ul class="foot__list">
+              <li><a href="#profile">PROFILE</a></li>
+              <li><a href="#projects">PROJECTS</a></li>
+              <li><a href="#experience">EXPERIENCE</a></li>
+              <li><a href="#stack">TECH MATRIX</a></li>
+              <li><a href="#insights">DATA TELEMETRY</a></li>
+            </ul>
+          </div>
+
+          <div class="foot__col">
+            <span class="foot__h">CHANNELS</span>
+            <ul class="foot__list">
+              <li><a href="https://github.com/Abysmaa" target="_blank" rel="noopener">GITHUB &nearr;</a></li>
+              <li><a href="https://linkedin.com" target="_blank" rel="noopener">LINKEDIN &nearr;</a></li>
+              <li><a href="mailto:abiyubisma@gmail.com">EMAIL &nearr;</a></li>
+              <li><a href="https://instagram.com" target="_blank" rel="noopener">INSTAGRAM &nearr;</a></li>
+            </ul>
+          </div>
+
+          <div class="foot__col">
+            <span class="foot__h">DOCUMENTS</span>
+            <ul class="foot__list">
+              <li><a href="#contact" id="cvLink">RESUME &bull; CV PDF</a></li>
+              <li><a href="#top">TOP OF TELEMETRY &uarr;</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Slide-out Terminal Chat Drawer -->
+        <div class="foot__chat" id="chat" inert aria-hidden="true">
+          <div class="foot__chat-in">
+            <button class="foot__close" type="button" id="chatClose">
+              <svg class="arrow arrow--back" viewBox="0 0 24 12" aria-hidden="true"><path d="M24 6H4M9 1L4 6l5 5"/></svg> CLOSE TERMINAL
+            </button>
+            <p class="contact__lede">TRANSMIT A DIRECT MESSAGE</p>
+            <p class="contact__note">
+              Tertarik merekrut, bekerja sama dalam proyek web, atau membutuhkan analisis data yang mendalam? Kirimkan pesan langsung melalui terminal ini.
+            </p>
+            
+            <form class="cform" id="contactForm" novalidate>
+              <div class="cform__box">
+                <input class="cform__in" type="text" name="name" placeholder="ENTER YOUR NAME / IDENTITY" required autocomplete="name" aria-label="Your Name" />
+                <input class="cform__in" type="email" name="email" placeholder="ENTER YOUR EMAIL ADDRESS" required autocomplete="email" aria-label="Your Email" />
+                <textarea class="cform__in cform__msg" name="message" rows="3" placeholder="DESCRIBE YOUR PROJECT OR INQUIRY..." required aria-label="Message"></textarea>
+                <button class="cform__go" type="submit" aria-label="Send Transmission">
+                  <svg class="arrow" viewBox="0 0 24 12" aria-hidden="true"><path d="M0 6h20M15 1l5 5-5 5"/></svg>
+                </button>
+              </div>
+              <p class="cform__foot">
+                <span class="cform__status" id="contactStatus" role="status" aria-live="polite"></span>
+                <span class="cform__alt">DIRECT DISPATCH: <a href="mailto:abiyubisma@gmail.com">ABIYUBISMA@GMAIL.COM</a></span>
+              </p>
+            </form>
+          </div>
+        </div>
+
+        <!-- Footer Base Bar -->
+        <div class="foot__base">
+          <span class="foot__status"><i></i>SYSTEM STATUS: OPERATIONAL</span>
+          <span>&copy; 2026 MUHAMMAD ABIYU BISMA RESWARA OETAMA</span>
+          <span class="foot__spacer"></span>
+          <span class="foot__clock-label">LOCAL CLOCK:</span>
+          <span id="clock">--:--:--</span>
+        </div>
+
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="./assets/app.js"></script>
+</body>
+</html>
