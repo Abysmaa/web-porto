@@ -309,7 +309,8 @@
       e.preventDefault();
       initAudio();
       playTone(660, 0.04, 'square', 0.035);
-      targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      targetEl.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
     }
   });
 
@@ -576,7 +577,7 @@
         // Optional mailto fallback trigger
         const mailSubject = encodeURIComponent(`Inquiry from ${name || 'Portfolio Contact'}`);
         const mailBody = encodeURIComponent(`From: ${name} (${email})\n\nMessage:\n${message}`);
-        console.log(`[Form Submission] To: abiyubisma@gmail.com, Subject: ${mailSubject}`);
+        console.log(`[Form Submission] To: mabiyu25@gmail.com, Subject: ${mailSubject}`);
       }, 1000);
     });
   }
