@@ -1,1032 +1,528 @@
-<!doctype html>
-<html lang="en" data-boot="splash">
+<!DOCTYPE html>
+<html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Muhammad Abiyu Bisma — Full Stack Web Developer &amp; Data Analyst</title>
-  <meta name="description" content="Muhammad Abiyu Bisma Reswara Oetama. Full Stack Web Developer & Data Analyst. Building high-performance web applications and extracting deep quantitative insights from data." />
-  <meta name="author" content="Muhammad Abiyu Bisma Reswara Oetama" />
-  <meta name="theme-color" content="#080c15" />
-  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Abiyu Bisma · Portofolio Data, Web, dan Keamanan</title>
+<meta name="description" content="Portofolio Muhammad Abiyu Bisma Reswara Oetama: proyek analisis data, pengembangan web, dan pembelajaran keamanan aplikasi.">
+<meta name="theme-color" content="#f1eadc">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500..800&display=swap">
+<style>
+:root{
+  --bg:#f1eadc;--sheet:#fffaf0;--ink:#302921;--muted:#706458;--line:#d7c8b3;--accent:#8f4b35;--on-accent:#fffaf0;--hl:#ead8ba;--pop:#ad6844;
+  --display:"Fraunces",Georgia,serif;--body:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#1b1915;--sheet:#25221c;--ink:#f2e9da;--muted:#b8ab97;--line:#484033;--accent:#d29a72;--on-accent:#251a13;--hl:#3c3327}
+}
+:root[data-theme="dark"]{--bg:#1b1915;--sheet:#25221c;--ink:#f2e9da;--muted:#b8ab97;--line:#484033;--accent:#d29a72;--on-accent:#251a13;--hl:#3c3327}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--pop:#d39a67}}
+:root[data-theme="dark"]{--pop:#d39a67}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{position:relative;isolation:isolate;min-height:100vh;margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{position:relative;z-index:1;max-width:68rem;margin:0 auto;padding:0 1.25rem}
+.sheet{background:var(--sheet);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 24px 60px -42px rgba(20,26,38,.48)}
+.background-scene{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;perspective:1000px;transform-style:preserve-3d}
+.background-scene .orb{position:absolute;border-radius:50%;filter:blur(22px);opacity:.72;transform-style:preserve-3d;translate:var(--scene-shift-x,0px) var(--scene-shift-y,0px);transition:translate .55s ease-out;will-change:transform}
+.orb-one{top:-12rem;left:-10rem;width:34rem;aspect-ratio:1;background:radial-gradient(circle at 48% 48%,color-mix(in srgb,var(--pop) 22%,transparent),color-mix(in srgb,var(--accent) 9%,transparent) 48%,transparent 72%);animation:background-orbit-one 30s ease-in-out infinite alternate}
+.orb-two{right:-12rem;bottom:-17rem;width:42rem;aspect-ratio:1;background:radial-gradient(circle at 45% 45%,color-mix(in srgb,var(--accent) 13%,transparent),color-mix(in srgb,var(--hl) 22%,transparent) 52%,transparent 72%);animation:background-orbit-two 38s ease-in-out infinite alternate}
+.orb-three{top:34%;left:58%;width:24rem;aspect-ratio:1;background:radial-gradient(circle at 48% 48%,color-mix(in srgb,var(--pop) 12%,transparent),transparent 70%);animation:background-orbit-three 34s ease-in-out infinite alternate}
+.background-plane{position:absolute;top:48%;left:-35%;width:170%;height:120%;transform:rotateX(68deg) translateZ(-120px);transform-origin:center top;background-image:linear-gradient(to right,color-mix(in srgb,var(--accent) 10%,transparent) 1px,transparent 1px),linear-gradient(to bottom,color-mix(in srgb,var(--accent) 10%,transparent) 1px,transparent 1px);background-size:76px 76px;mask-image:radial-gradient(ellipse at center,black 0%,transparent 70%);opacity:.42;animation:background-grid-drift 60s linear infinite}
+.scroll-progress{position:fixed;inset:0 0 auto;z-index:20;height:4px;background:color-mix(in srgb,var(--accent) 15%,transparent)}
+.scroll-progress span{display:block;width:0;height:100%;background:var(--accent);transform-origin:left;transition:width .12s linear}
+.back-to-top{position:fixed;right:max(1.25rem,env(safe-area-inset-right));bottom:max(1.25rem,env(safe-area-inset-bottom));z-index:10;display:grid;place-items:center;width:2.9rem;height:2.9rem;border:1px solid var(--line);border-radius:50%;background:var(--sheet);color:var(--ink);font:700 1.25rem var(--body);box-shadow:0 8px 24px -12px rgba(20,26,38,.5);cursor:pointer;opacity:0;visibility:hidden;transform:translateY(.5rem);transition:opacity .2s,visibility .2s,transform .2s}
+.back-to-top.is-visible{opacity:1;visibility:visible;transform:translateY(0)}
+.back-to-top:hover{background:var(--hl);transform:translateY(-2px)}
+.skip-link{position:fixed;top:.75rem;left:.75rem;z-index:10;padding:.65rem 1rem;background:var(--sheet);border:1px solid var(--line);border-radius:8px;transform:translateY(-160%)}
+.skip-link:focus{transform:translateY(0)}
 
-  <!-- Open Graph / Meta -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Muhammad Abiyu Bisma — Full Stack Web Developer &amp; Data Analyst" />
-  <meta property="og:description" content="Full Stack Web Developer & Data Analyst. Engineering scalable web applications and high-fidelity data intelligence." />
-  
-  <!-- Google Fonts: Chakra Petch for High-Tech HUD & JetBrains Mono for Terminal/Code -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="./assets/style.css">
+/* hero */
+.hero{position:relative;margin-top:2rem;animation:hero-enter .65s cubic-bezier(.2,.7,.25,1) both}
+.theme-toggle{position:absolute;top:1rem;right:1rem;z-index:1;display:inline-flex;align-items:center;gap:.45rem;min-height:2.5rem;padding:.45rem .8rem;border:1px solid var(--line);border-radius:999px;background:var(--sheet);color:var(--ink);font:600 .85rem var(--body);cursor:pointer;transition:background .18s,border-color .18s,transform .18s}
+.theme-toggle:hover{border-color:var(--accent);background:var(--hl);transform:translateY(-1px)}
+.theme-toggle .icon{font-size:1.05rem}
+.grid{display:grid;grid-template-columns:minmax(0,1fr) 15rem;align-items:center;gap:3rem;padding:3.25rem;transform:perspective(1200px) rotateX(var(--hero-tilt-x,0deg)) rotateY(var(--hero-tilt-y,0deg));transform-style:preserve-3d;transition:transform .2s ease-out}
+.hero-copy{grid-column:1;grid-row:1;max-width:44rem;transform:translateZ(18px);transition:transform .2s ease-out}
+.eyebrow{margin:0 0 .75rem;color:var(--accent);font-size:.78rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
+h1{margin:0;font:800 clamp(2.8rem,6vw,4.5rem)/1 var(--display);letter-spacing:-.04em}
+.lead{margin:1rem 0 0;max-width:42rem;color:var(--muted);font-size:clamp(1.05rem,2vw,1.2rem);line-height:1.65}
+.status{display:inline-flex;align-items:center;gap:.55rem;margin:1.35rem 0 0;color:var(--muted);font-size:.95rem;font-weight:600}
+.status::before{content:"";width:.55rem;height:.55rem;border-radius:50%;background:#32a675;box-shadow:0 0 0 3px color-mix(in srgb,#32a675 18%,transparent)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.4rem}
+.hero-actions a{display:inline-flex;align-items:center;justify-content:center;min-height:2.9rem;padding:.65rem 1.1rem;border:1px solid var(--accent);border-radius:7px;font-size:.95rem;font-weight:600;text-decoration:none;transition:background .18s,color .18s,transform .18s}
+.hero-actions a:hover{transform:translateY(-2px)}
+.hero-actions .primary{background:var(--accent);color:var(--on-accent)}
+.hero-actions .primary:hover{background:color-mix(in srgb,var(--accent) 86%,var(--ink))}
+.hero-actions .secondary:hover{background:color-mix(in srgb,var(--accent) 8%,var(--sheet))}
+.orn.photo{position:relative;grid-column:2;grid-row:1;right:auto;top:auto;width:100%;max-width:15rem;aspect-ratio:4/5;justify-self:end;pointer-events:none;transform:perspective(900px) rotateX(var(--photo-tilt-x,0deg)) rotateY(var(--photo-tilt-y,0deg)) translateZ(42px);transform-style:preserve-3d;transition:transform .2s ease-out;background:var(--sheet);padding:.45rem;border:1px solid var(--line);border-radius:12px;box-shadow:0 20px 45px -30px rgba(20,26,38,.5);animation:photo-float 6s ease-in-out 0.6s infinite}
+.orn.photo::before,.orn.photo::after{position:absolute;z-index:2;content:"";pointer-events:none}
+.orn.photo::before{top:-.6rem;left:.3rem;width:3.7rem;aspect-ratio:1;border:1px solid color-mix(in srgb,var(--accent) 45%,var(--line));border-radius:50%;background:radial-gradient(circle at 32% 28%,var(--sheet),var(--pop) 70%);box-shadow:inset -8px -10px 18px color-mix(in srgb,var(--accent) 35%,transparent),0 12px 24px -12px var(--accent);transform:translateZ(35px);animation:orb-pulse 4.5s ease-in-out infinite}
+.orn.photo::after{right:.35rem;bottom:.6rem;padding:.38rem .62rem;border:1px solid color-mix(in srgb,var(--accent) 35%,var(--line));border-radius:999px;background:var(--accent);color:var(--on-accent);content:"DATA / WEB";font:700 .62rem var(--body);letter-spacing:.08em;box-shadow:0 8px 18px -10px var(--ink);transform:translateZ(48px);animation:badge-float 5s ease-in-out infinite}
+.photo img{position:relative;z-index:1;display:block;width:100%;height:100%;object-fit:cover;border-radius:8px;transform:translateZ(20px)}
+/* project filters */
+.tabs{display:flex;flex-wrap:wrap;align-items:center;gap:.45rem;padding:0;margin:1.25rem 0 1rem;background:transparent}
+.tabs button{appearance:none;border:1px solid var(--line);border-radius:999px;background:var(--sheet);color:var(--muted);font:600 .92rem var(--body);padding:.55rem 1rem;cursor:pointer;transition:background .18s,color .18s,border-color .18s,transform .18s}
+.tabs button:hover{border-color:var(--accent);color:var(--ink);transform:translateY(-1px)}
+.tabs button[aria-pressed="true"]{border-color:var(--accent);background:var(--accent);color:var(--on-accent)}
+.tabs .hint{margin-left:auto;padding:0 .5rem;color:var(--muted);font-size:.85rem}
+
+/* sections */
+section{margin-top:3.5rem}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,.25,1)}
+.reveal.is-visible{opacity:1;transform:translateY(0)}
+h2{margin:0 0 1rem;font:800 clamp(1.8rem,5vw,2.6rem)/1.05 var(--display);letter-spacing:-.02em}
+h2::after{content:"";display:block;width:5.5rem;height:.8rem;margin-top:.55rem;background:var(--pop);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 12' preserveAspectRatio='none'%3E%3Cpath d='M2 7c8-8 14 8 24 0s16 8 24 0 16 8 24 0 14 8 22 0' fill='none' stroke='black' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E") center/100% 100% no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 12' preserveAspectRatio='none'%3E%3Cpath d='M2 7c8-8 14 8 24 0s16 8 24 0 16 8 24 0 14 8 22 0' fill='none' stroke='black' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E") center/100% 100% no-repeat}
+.intro{max-width:40rem;margin:0 0 1.5rem;color:var(--muted)}
+
+/* project rows */
+.rows details{border-bottom:1px solid var(--line);background:var(--sheet);transition:background .18s}
+.rows details:hover{background:color-mix(in srgb,var(--accent) 3%,var(--sheet))}
+.rows details:last-child{border-bottom:0}
+.rows summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:minmax(0,1.2fr) 6.5rem minmax(0,1.6fr) 1.5rem;gap:1rem;align-items:baseline;padding:1.2rem 1.3rem;border-left:4px solid transparent;transition:background .18s,border-color .18s}
+.rows summary::-webkit-details-marker{display:none}
+.rows summary:hover{background:color-mix(in srgb,var(--accent) 5%,var(--sheet))}
+.rows summary:focus-visible{outline-offset:-4px}
+.rows summary::after{content:"+";justify-self:end;font:600 1.3rem var(--display);color:var(--muted)}
+.rows details[open] summary::after{content:"\2212"}
+.rows details[open] summary{border-left-color:var(--accent)}
+.rows details[open] .body{animation:details-enter .28s ease both}
+.rows .t{font:800 1.25rem/1.2 var(--display);letter-spacing:-.01em}
+.rows .tag{font-weight:600;color:var(--accent)}
+.rows .r{color:var(--muted)}
+.rows .body{padding:0 1.2rem 1.3rem calc(1.2rem + 5px);max-width:46rem}
+.rows .body ul{margin:.2rem 0 0;padding-left:1.1rem}
+.rows .body li{margin:.35rem 0}
+.rows .body p{margin:.7rem 0 0;color:var(--muted);font-size:.95rem}
+.rows .wip{display:inline-block;margin-left:.5rem;padding:.05rem .5rem;background:var(--hl);border-radius:3px;font:600 .8rem var(--body);color:var(--ink);vertical-align:middle}
+.dashboard-preview{margin-top:1rem;padding:.8rem;border:1px solid var(--line);border-radius:10px;background:color-mix(in srgb,var(--accent) 3%,var(--sheet))}
+.dashboard-preview-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.45rem .8rem;margin-bottom:.7rem;font-size:.92rem}
+.dashboard-preview-head a{color:var(--accent);font-weight:700;text-decoration-thickness:1px;text-underline-offset:3px}
+.dashboard-preview iframe{display:block;width:100%;height:450px;border:1px solid var(--line);border-radius:7px;background:var(--sheet)}
+
+/* two column lists */
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:0}
+.cols>div{padding:1.3rem 1.4rem;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:background .2s,transform .2s}
+.cols>div:hover{background:color-mix(in srgb,var(--accent) 4%,var(--sheet));transform:translateY(-2px)}
+.cols h3{margin:0 0 .5rem;font:800 1.15rem var(--display)}
+.cols p,.cols li{margin:.25rem 0;color:var(--muted);font-size:.98rem}
+.cols ul{margin:0;padding-left:1.1rem}
+.cols b{color:var(--ink);font-weight:600}
+.jobs>div{display:grid;grid-template-columns:11rem minmax(0,1fr);gap:1rem;padding:1.1rem 1.4rem;border-bottom:1px solid var(--line);transition:background .2s}
+.jobs>div:hover{background:color-mix(in srgb,var(--accent) 4%,var(--sheet))}
+.jobs>div:last-child{border-bottom:0}
+.jobs .when{color:var(--muted);font-size:.95rem}
+.jobs h3{margin:0;font:800 1.15rem var(--display)}
+.jobs p{margin:.2rem 0 0;color:var(--muted)}
+.experience-docs{margin-top:1rem;overflow:hidden;border:1px solid var(--line);border-radius:10px;background:color-mix(in srgb,var(--accent) 3%,var(--sheet))}
+.experience-docs>summary{display:flex;align-items:center;gap:.65rem;list-style:none;padding:.85rem 1rem;cursor:pointer;font-weight:700;transition:background .18s}
+.experience-docs>summary::-webkit-details-marker{display:none}
+.experience-docs>summary:hover{background:color-mix(in srgb,var(--accent) 5%,var(--sheet))}
+.experience-docs>summary:focus-visible{outline-offset:-3px}
+.experience-docs>summary::after{content:"+";margin-left:.15rem;color:var(--accent);font:800 1.25rem var(--display);transition:transform .18s}
+.experience-docs[open]>summary::after{content:"\2212";transform:rotate(180deg)}
+.experience-docs__count{margin-left:auto;padding:.1rem .5rem;border-radius:999px;background:var(--hl);color:var(--muted);font-size:.78rem;font-weight:600;white-space:nowrap}
+.experience-docs .experience-gallery{padding:0 1rem 1rem;margin-top:0}
+.experience-docs[open] .experience-gallery{animation:details-enter .28s ease both}
+.experience-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem;margin-top:1rem}
+.experience-gallery figure{min-width:0;margin:0;overflow:hidden;border:1px solid var(--line);border-radius:8px;background:var(--sheet);box-shadow:0 8px 20px -18px var(--ink);transition:box-shadow .25s,border-color .25s}
+.experience-gallery button{position:relative;display:block;width:100%;aspect-ratio:4/3;padding:0;overflow:hidden;border:0;background:var(--sheet);color:inherit;text-align:left;cursor:zoom-in}
+.experience-gallery button:focus-visible{outline-offset:-3px}
+.experience-gallery img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;transition:transform .4s cubic-bezier(.2,.7,.25,1)}
+.experience-gallery figcaption{padding:.5rem .65rem;color:var(--muted);font-size:.82rem;line-height:1.35}
+.experience-gallery__zoom-hint{position:absolute;right:.55rem;bottom:.55rem;padding:.3rem .55rem;border:1px solid color-mix(in srgb,var(--sheet) 30%,transparent);border-radius:999px;background:color-mix(in srgb,var(--ink) 78%,transparent);color:var(--sheet);font-size:.72rem;font-weight:600;opacity:0;transform:translateY(.25rem);transition:opacity .2s,transform .2s;pointer-events:none}
+.experience-gallery figure:hover{border-color:color-mix(in srgb,var(--accent) 55%,var(--line));box-shadow:0 14px 28px -18px var(--ink)}
+.experience-gallery button:hover img{transform:scale(1.045)}
+.experience-gallery button:hover .experience-gallery__zoom-hint,.experience-gallery button:focus-visible .experience-gallery__zoom-hint{opacity:1;transform:translateY(0)}
+.experience-docs[open] .experience-gallery figure{animation:gallery-tile-enter .45s cubic-bezier(.2,.7,.25,1) both}
+.photo-viewer{width:min(92vw,72rem);max-width:calc(100vw - 1rem);max-height:calc(100vh - 2rem);max-height:calc(100dvh - 2rem);padding:clamp(.7rem,2vw,1.25rem);overflow:auto;border:1px solid var(--line);border-radius:14px;background:var(--sheet);color:var(--ink);box-shadow:0 24px 80px rgba(0,0,0,.4)}
+.photo-viewer::backdrop{background:rgba(15,12,10,.8);backdrop-filter:blur(7px)}
+.photo-viewer[open]{animation:viewer-enter .22s ease-out both}
+.photo-viewer__header{display:flex;justify-content:flex-end;margin-bottom:.5rem}
+.photo-viewer__close{min-width:2.5rem;min-height:2.5rem;border:1px solid var(--line);border-radius:999px;background:var(--sheet);color:var(--ink);font:600 .9rem var(--body);cursor:pointer;transition:background .18s,transform .18s}
+.photo-viewer__close:hover{background:var(--hl);transform:scale(1.04)}
+.photo-viewer__image{display:block;width:100%;max-height:calc(100vh - 8rem);max-height:calc(100dvh - 8rem);object-fit:contain;border-radius:8px}
+.photo-viewer__caption{margin:.75rem .25rem .1rem;color:var(--muted);font-weight:600}
+
+/* contact */
+.contact{position:relative;overflow:visible;padding:2.4rem 1.5rem 2rem}
+.contact::before{content:"";position:absolute;top:-.8rem;left:2rem;width:6.5rem;height:1.6rem;background:color-mix(in srgb,var(--hl) 85%,transparent);border:1px solid var(--line);transform:rotate(-4deg)}
+.contact p{margin:0 0 1.2rem;max-width:32rem;font-size:1.15rem}
+.btns{display:flex;flex-wrap:wrap;gap:.7rem}
+.btns a{display:inline-block;padding:.75rem 1.2rem;border-radius:7px;border:2px solid var(--accent);font-weight:600;text-decoration:none;transition:background .18s,color .18s,transform .18s}
+.btns a:first-child{background:var(--accent);color:var(--on-accent)}
+.btns a:hover{background:var(--hl);color:var(--ink);transform:translateY(-2px)}
+footer{margin:2.5rem 0 2rem;color:var(--muted);font-size:.9rem}
+
+@keyframes hero-enter{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes photo-float{0%,100%{translate:0 0}50%{translate:0 -7px}}
+@keyframes orb-pulse{0%,100%{scale:1}50%{scale:1.08}}
+@keyframes badge-float{0%,100%{translate:0 0}50%{translate:0 -5px}}
+@keyframes background-orbit-one{from{transform:translate3d(-2vw,-2vh,-90px) rotateX(-8deg) rotateY(10deg) scale(.96)}to{transform:translate3d(6vw,7vh,35px) rotateX(12deg) rotateY(-14deg) scale(1.08)}}
+@keyframes background-orbit-two{from{transform:translate3d(2vw,3vh,-120px) rotateX(10deg) rotateY(-12deg) scale(1.04)}to{transform:translate3d(-7vw,-6vh,25px) rotateX(-10deg) rotateY(14deg) scale(.94)}}
+@keyframes background-orbit-three{from{transform:translate3d(-5vw,5vh,-70px) rotateX(-12deg) rotateY(16deg) scale(.9)}to{transform:translate3d(4vw,-4vh,60px) rotateX(14deg) rotateY(-10deg) scale(1.1)}}
+@keyframes background-grid-drift{to{background-position:76px 76px}}
+@keyframes details-enter{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+@keyframes gallery-tile-enter{from{opacity:0;transform:translateY(12px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes viewer-enter{from{opacity:0;transform:translateY(8px) scale(.99)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media (max-width:42rem){
+  .rows summary{grid-template-columns:minmax(0,1fr) 1.5rem;gap:.2rem .8rem}
+  .rows .tag{grid-column:1}.rows .r{grid-column:1}
+  .rows summary::after{grid-row:1;grid-column:2}
+  .jobs>div{grid-template-columns:1fr;gap:.2rem}
+  .tabs .hint{display:block;width:100%;margin:.2rem 0 0;padding:0 .35rem}
+  .hero{margin-top:1rem}
+  .grid{grid-template-columns:1fr;gap:1.5rem;padding:1.5rem}
+  .hero-copy{grid-column:1;grid-row:2}
+  .orn.photo{grid-column:1;grid-row:1;width:8rem;justify-self:start}
+  .experience-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:.55rem}
+  .experience-gallery figcaption{padding:.45rem .5rem;font-size:.78rem}
+  .rows summary{padding:1rem}
+}
+@media (max-width:22rem){.experience-gallery{grid-template-columns:1fr}}
+@media (hover:none){.experience-gallery__zoom-hint{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+</style>
 </head>
-<body>
+<body id="top">
+<div class="background-scene" aria-hidden="true"><div class="background-plane"></div><div class="orb orb-one"></div><div class="orb orb-two"></div><div class="orb orb-three"></div></div>
+<div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
+<a class="skip-link" href="#konten">Lewati ke konten utama</a>
+<div class="wrap">
 
-  <a class="skip" href="#top">SKIP TO MAIN CONTENT</a>
-
-  <!-- ══ SVG Duotone Filters for Images ═══════════════════════════ -->
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <defs>
-      <filter id="duoPortrait" color-interpolation-filters="sRGB">
-        <feColorMatrix type="matrix" values=".2126 .7152 .0722 0 0 .2126 .7152 .0722 0 0 .2126 .7152 .0722 0 0 0 0 0 1 0"/>
-        <feComponentTransfer>
-          <feFuncR type="table" tableValues="0.02 0.2"/>
-          <feFuncG type="table" tableValues="0.05 0.85"/>
-          <feFuncB type="table" tableValues="0.12 1.0"/>
-        </feComponentTransfer>
-        <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0.0978 0.3290 0.0332 0 0.6"/>
-      </filter>
-      
-      <filter id="duoCard" color-interpolation-filters="sRGB">
-        <feColorMatrix type="matrix" values=".2126 .7152 .0722 0 0 .2126 .7152 .0722 0 0 .2126 .7152 .0722 0 0 0 0 0 1 0"/>
-        <feComponentTransfer>
-          <feFuncR type="table" tableValues="0.03 0.35"/>
-          <feFuncG type="table" tableValues="0.06 0.65"/>
-          <feFuncB type="table" tableValues="0.12 0.95"/>
-        </feComponentTransfer>
-      </filter>
-    </defs>
-  </svg>
-
-  <!-- ══ Ambient Field Background Layers ══════════════════════════ -->
-  <div class="field" aria-hidden="true">
-    <div class="field__dots"></div>
-    <div class="field__scan"></div>
-    <div class="field__vignette"></div>
+<header class="hero sheet">
+  <button class="theme-toggle" type="button" aria-label="Aktifkan tema gelap" aria-pressed="false"><span class="icon" aria-hidden="true">◐</span><span id="theme-label">Tema gelap</span></button>
+  <div class="grid">
+    <div class="orn photo"><img src="data:image/jpeg;base64,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" alt="Foto Muhammad Abiyu Bisma Reswara Oetama" width="360" height="450"></div>
+    <div class="hero-copy">
+      <p class="eyebrow">Analisis Data · Pengembangan Web</p>
+      <h1>Abiyu Bisma</h1>
+      <p class="lead">Fresh Graduate Sistem Informasi Universitas Gunadarma dengan pengalaman proyek analisis data dan pengembangan web. Terbiasa mengolah data, membangun aplikasi, dan menyajikan temuan secara jelas.</p>
+      <p class="status">Terbuka untuk peluang magang</p>
+      <div class="hero-actions">
+        <a class="primary" href="#proyek">Lihat proyek</a>
+        <a class="secondary" href="#kontak">Hubungi saya</a>
+      </div>
+    </div>
   </div>
-
-  <!-- Dynamic Particle Streaks Canvas -->
-  <canvas id="streaks" aria-hidden="true"></canvas>
-
-  <!-- ══ BOOT SEQUENCE: SPLASH SCREEN ═════════════════════════════ -->
-  <section id="splash" class="boot">
-    <div class="splash__plate">
-      <div class="splash__mark">
-        <!-- High-Tech Animated AB Geometric Monogram -->
-        <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
-          <circle class="mark__ring" cx="32" cy="32" r="28" />
-          <circle class="mark__ring mark__ring--2" cx="32" cy="32" r="20" />
-          <!-- Polygonal high tech "AB" glyphs -->
-          <path class="mark__s mark__s--1" d="M18 44 L32 16 L46 44" />
-          <path class="mark__s mark__s--2" d="M23 34 H41" />
-          <path class="mark__s mark__s--3" d="M32 20 H42 C47 20, 47 30, 42 30 H32" />
-          <path class="mark__s mark__s--4" d="M32 30 H45 C50 30, 50 44, 44 44 H32" />
-        </svg>
-        <div class="splash__word">
-          <span class="wordmark">ABIYU BISMA</span>
-          <span class="wordmark__sub" aria-label="System Identity">
-            <span>F</span><span>U</span><span>L</span><span>L</span><span>S</span><span>T</span><span>A</span><span>C</span><span>K</span>
-            <span>&bull;</span>
-            <span>D</span><span>A</span><span>T</span><span>A</span>
-          </span>
-        </div>
-      </div>
-
-      <ol class="splash__lines">
-        <li data-line>MUHAMMAD ABIYU BISMA RESWARA OETAMA · PORTFOLIO</li>
-        <li data-line>EST. 2024 [SYSTEM STATUS: ACTIVE &bull; VER 2.6]</li>
-        <li data-line>FULL STACK WEB DEVELOPMENT &amp; DATA ANALYTICS <span class="tick">◤</span></li>
-      </ol>
-
-      <button id="enter" class="enter" type="button" aria-label="Initialize Portfolio Experience">
-        <span class="enter__rule"></span>
-        <span class="enter__bars"><i></i><i></i><i></i></span>
-        <span class="enter__label">INITIALIZE SYSTEM</span>
-      </button>
-
-      <p class="splash__legal">SYS.TELEMETRY 2026 // CREATED &amp; DEPLOYED BY ABIYU BISMA</p>
-    </div>
-  </section>
-
-  <!-- ══ BOOT SEQUENCE: DIAGNOSTIC LOADER ═════════════════════════ -->
-  <section id="loader" class="boot" hidden>
-    <div class="loader__stack">
-      <div class="loader__ring">
-        <svg viewBox="0 0 120 120" aria-hidden="true">
-          <circle class="ring__track" cx="60" cy="60" r="52" />
-          <circle class="ring__fill" cx="60" cy="60" r="52" />
-        </svg>
-        <span class="loader__pct" id="pct">00</span>
-      </div>
-      <p class="loader__title">SYS.INITIALIZATION.EXP</p>
-      <ul class="loader__readout" id="readout" aria-live="off"></ul>
-    </div>
-  </section>
-
-  <!-- ══ MAIN INTERFACE: SITE ═════════════════════════════════════ -->
-  <div id="site" class="site" aria-hidden="true">
-
-    <!-- ══ Tactical HUD Overlays ═══════════════════════════════════ -->
-    <div class="hud" aria-hidden="true">
-      <span class="hud__c hud__c--tl"></span>
-      <span class="hud__c hud__c--tr"></span>
-      <span class="hud__c hud__c--bl"></span>
-      <span class="hud__c hud__c--br"></span>
-      <div class="hud__rail hud__rail--l">
-        <span>ABIYU BISMA <svg class="sl" viewBox="0 0 14 12" aria-hidden="true"><path d="M3.6 0h2.5L2.5 12H0zM10.9 0h2.5L9.8 12H7.3z"/></svg> FULLSTACK &amp; DATA // EST. 2024</span>
-      </div>
-      <div class="hud__rail hud__rail--r">
-        <span id="hudScroll">SCROLL 000</span>
-      </div>
-    </div>
-
-    <!-- ══ Navigation Bar ══════════════════════════════════════════ -->
-    <header class="nav">
-      <a class="nav__brand" href="#top" aria-label="Abiyu Bisma Home">
-        <svg class="mark mark--sm" viewBox="0 0 64 64" aria-hidden="true">
-          <circle class="mark__ring" cx="32" cy="32" r="28" />
-          <path class="mark__s" d="M18 44 L32 16 L46 44 M23 34 H41" />
-        </svg>
-        <span>ABIYU<i>BISMA</i><svg class="sl" viewBox="0 0 14 12" aria-hidden="true"><path d="M3.6 0h2.5L2.5 12H0zM10.9 0h2.5L9.8 12H7.3z"/></svg></span>
-      </a>
-
-      <nav class="nav__links">
-        <a href="#profile" data-nav>PROFILE</a>
-        <a href="#projects" data-nav>PROJECTS</a>
-        <a href="#experience" data-nav>EXPERIENCE</a>
-        <a href="#stack" data-nav>TECH MATRIX</a>
-        <a href="#insights" data-nav>DATA TELEMETRY</a>
-        <a href="#contact" data-nav>LET'S CHAT</a>
-      </nav>
-
-      <!-- Ambient Audio Synthesizer Button -->
-      <button id="sound" class="nav__sound" type="button" aria-pressed="false" aria-label="Toggle ambient sound synthesizer">
-        <i></i><i></i><i></i><i></i>
-        <span>AMBIENCE.MUTE</span>
-      </button>
-
-      <!-- Mobile Menu Toggle -->
-      <button id="menu" class="nav__menu" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Toggle Navigation Menu">
-        <i></i><i></i><i></i>
-      </button>
-
-      <!-- Scroll Progress Bar -->
-      <span class="nav__prog"><i id="progBar"></i></span>
-    </header>
-
-    <!-- Mobile Drawer -->
-    <nav id="drawer" class="drawer" hidden>
-      <a href="#profile" data-nav>PROFILE</a>
-      <a href="#projects" data-nav>PROJECTS</a>
-      <a href="#experience" data-nav>EXPERIENCE</a>
-      <a href="#stack" data-nav>TECH MATRIX</a>
-      <a href="#insights" data-nav>DATA TELEMETRY</a>
-      <a href="#contact" data-nav>LET'S CHAT</a>
-    </nav>
-
-    <!-- ══ MAIN CONTENT ════════════════════════════════════════════ -->
-    <main id="top">
-
-      <!-- ── HERO SECTION ────────────────────────────────────────── -->
-      <section class="hero">
-        <div class="hero__panel panel">
-          <div class="panel__tag">
-            <span>NOW.ONLINE // READY FOR NEW MISSIONS &amp; CONTRACTS</span>
-            <span class="panel__status-dot"></span>
-          </div>
-          <div class="hero__body">
-            <p class="hero__eyebrow">« BISMA.SYS // ARCHITECT &amp; ANALYST</p>
-            <h1 class="hero__title">
-              <span class="glitch" data-text="FULL STACK &amp;">FULL STACK &amp;</span>
-              <span class="glitch glitch--stroke" data-text="DATA ANALYST">DATA ANALYST</span>
-            </h1>
-            <p class="hero__lede">
-              Muhammad Abiyu Bisma Reswara Oetama — Building production-grade web applications and turning complex data into clear, actionable decisions.
-            </p>
-
-            <div class="hero__meta">
-              <span>JAKARTA, ID</span>
-              <em>/</em>
-              <span>WEB ARCHITECTURE</span>
-              <em>/</em>
-              <span>QUANTITATIVE ANALYTICS</span>
-              <em>/</em>
-              <span>EST. 2024</span>
-            </div>
-
-            <div class="hero__actions">
-              <a class="hero__action hero__action--primary" href="#projects">VIEW PROJECTS <span aria-hidden="true">&rarr;</span></a>
-              <a class="hero__action" href="./CV_ATS_MUHAMMAD%20ABIYU%20BISMA%20RESWARA%20OETAMA.pdf" target="_blank" rel="noopener">DOWNLOAD CV <span aria-hidden="true">&darr;</span></a>
-            </div>
-
-            <!-- Quick Telemetry Stats Strip -->
-            <div class="hero__telemetry">
-              <div class="telem-item">
-                <span class="telem-item__label">DEVELOPMENT CYCLE</span>
-                <span class="telem-item__val">FULL CYCLE (FRONT TO BACK)</span>
-              </div>
-              <div class="telem-item">
-                <span class="telem-item__label">DATA MODELING</span>
-                <span class="telem-item__val">EDA &bull; ETL &bull; PREDICTIVE</span>
-              </div>
-              <div class="telem-item">
-                <span class="telem-item__label">SYSTEM INTEGRATION</span>
-                <span class="telem-item__val">REST &bull; GRAPHQL &bull; WEBSOCKET</span>
-              </div>
-            </div>
-          </div>
-
-          <a class="hero__scroll" href="#profile">
-            <span class="hero__scroll-in"><span class="arrow">&darr;</span> SCROLL.EXTENDED.TELEMETRY</span>
-          </a>
-        </div>
-      </section>
-
-      <!-- ── SECTION 01: PROFILE ─────────────────────────────────── -->
-      <section id="profile" class="sec">
-        <div class="sec__head">
-          <span class="sec__idx">01</span>
-          <h2 class="sec__title" data-split>PROFILE // DOSSIER</h2>
-          <span class="sec__rule"></span>
-        </div>
-
-        <div class="grid grid--profile">
-          <!-- Left: Biometric Avatar Dossier Panel -->
-          <div class="panel portrait">
-            <div class="panel__tag">SUBJECT.ID // DEV-0924</div>
-            <figure class="shot shot--portrait">
-              <!-- Real Portrait Photo with HUD Tactical Overlays -->
-              <div class="portrait-frame">
-                <img
-                  class="portrait-photo"
-                  src="./media/profile.jpg"
-                  alt="Muhammad Abiyu Bisma Reswara Oetama — Full Stack Developer & Data Analyst"
-                  loading="eager"
-                  decoding="async"
-                />
-                <!-- Biometric HUD Overlay -->
-                <div class="portrait-hud">
-                  <span class="portrait-bracket portrait-bracket--tl"></span>
-                  <span class="portrait-bracket portrait-bracket--tr"></span>
-                  <span class="portrait-bracket portrait-bracket--bl"></span>
-                  <span class="portrait-bracket portrait-bracket--br"></span>
-                  <span class="portrait-tag portrait-tag--top"><i></i>SUBJECT.VERIFIED</span>
-                  <span class="portrait-tag portrait-tag--bottom">ABIYU BISMA &bull; JAKARTA, ID</span>
-                  <span class="portrait-tag portrait-tag--quote">"WORKS ON MY MACHINE!"</span>
-                </div>
-              </div>
-              <span class="shot__scan"></span>
-            </figure>
-            <div class="portrait__strip">
-              <span>M. ABIYU BISMA R. O.</span>
-              <span>DEV &amp; ANALYST</span>
-            </div>
-          </div>
-
-          <!-- Right: Dossier Summary & Metrics -->
-          <div class="panel panel--lg">
-            <div class="panel__tag">DOSSIER // ARCHITECTURAL DNA</div>
-            <div class="panel__body prose">
-              <p>
-                Saya adalah <strong>Full Stack Web Developer &amp; Data Analyst</strong> yang berdedikasi membangun jembatan antara rekayasa perangkat lunak modern yang tangguh dan keakuratan analisis data bisnis tingkat lanjut.
-              </p>
-              <p>
-                Dalam ranah <strong>Full Stack Web</strong>, saya merancang dan mengimplementasikan aplikasi end-to-end: dari antarmuka modern yang responsif, interaktif, dan aksesibel, hingga arsitektur backend, database relational/NoSQL, dan API terdistribusi yang aman serta berperforma tinggi.
-              </p>
-              <p>
-                Dalam ranah <strong>Analisis Data</strong>, saya memproses data mentah menjadi wawasan strategis melalui <em>Exploratory Data Analysis (EDA)</em>, pembersihan data terstruktur, visualisasi interaktif, hingga pemodelan statistik &amp; prediksi tren bisnis untuk mendukung pengambilan keputusan berbasis fakta numerik.
-              </p>
-
-              <!-- Telemetry Stats Grid -->
-              <div class="stats stats--matrix">
-                <div>
-                  <dt>CORE STACK</dt>
-                  <dd>JS / TS &bull; PYTHON &bull; SQL</dd>
-                </div>
-                <div>
-                  <dt>WEB FRAMEWORKS</dt>
-                  <dd>REACT &bull; NEXT.JS &bull; NODE &bull; FASTAPI</dd>
-                </div>
-                <div>
-                  <dt>DATA SUITE</dt>
-                  <dd>PANDAS &bull; BIGQUERY &bull; TABLEAU</dd>
-                </div>
-                <div>
-                  <dt>DEPLOYMENT &amp; TOOLS</dt>
-                  <dd>DOCKER &bull; GIT &bull; LINUX &bull; CLOUD</dd>
-                </div>
-              </div>
-
-              <div class="dl-row">
-                <a class="dl" href="#contact">
-                  <span class="dl__k">CONTACT INITIATION</span>
-                  <span class="dl__v">LET'S COLLABORATE &rarr;</span>
-                </a>
-                <a class="dl" href="#projects">
-                  <span class="dl__k">SYSTEM ARCHIVES</span>
-                  <span class="dl__v">EXPLORE PROJECTS &darr;</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ── SECTION 02: PROJECTS ────────────────────────────────── -->
-      <section id="projects" class="sec">
-        <div class="sec__head">
-          <span class="sec__idx">02</span>
-          <h2 class="sec__title" data-split>CLASSIFIED PROJECTS</h2>
-          <span class="sec__rule"></span>
-        </div>
-        <p class="sec__lede">Production web applications, interactive dashboards, and data analytics systems.</p>
-
-        <!-- Category Filter Tabs -->
-        <div class="rolls" role="tablist" aria-label="Project Categories">
-          <button class="roll" type="button" data-filter="all" aria-pressed="true">
-            <span class="roll__no">01</span>
-            <span class="roll__name">ALL INVENTORIES</span>
-          </button>
-          <button class="roll" type="button" data-filter="web" aria-pressed="false">
-            <span class="roll__no">02</span>
-            <span class="roll__name">FULLSTACK WEB</span>
-          </button>
-          <button class="roll" type="button" data-filter="data" aria-pressed="false">
-            <span class="roll__no">03</span>
-            <span class="roll__name">DATA &amp; RESEARCH</span>
-          </button>
-        </div>
-
-        <!-- Projects Grid -->
-        <div class="bands" id="workGrid">
-
-          <!-- Project 1: Dyacara Web — Laravel E-Commerce with Midtrans -->
-          <article class="band panel" data-category="web">
-            <div class="panel__tag">
-              <span class="band__id">PRJ-01 // FULLSTACK E-COMMERCE &amp; PAYMENT GATEWAY</span>
-              <span class="band__rule"></span>
-              <span class="band__hint">SOURCE ON GITHUB</span>
-            </div>
-            
-            <div class="shot shot--project">
-              <svg class="schema" viewBox="0 0 1200 440" preserveAspectRatio="xMidYMid slice" aria-label="Dyacara Web — E-Commerce Architecture">
-                <rect width="1200" height="440" fill="#0b121e"/>
-                <path d="M0 60 H1200 M0 120 H1200 M0 180 H1200 M0 240 H1200 M0 300 H1200 M0 360 H1200" stroke="#17243b" stroke-width="1"/>
-                <path d="M150 0 V440 M300 0 V440 M450 0 V440 M600 0 V440 M750 0 V440 M900 0 V440 M1050 0 V440" stroke="#17243b" stroke-width="1"/>
-
-                <!-- Architecture Flow: Browser → Laravel → DB + Midtrans -->
-                <g transform="translate(80, 150)">
-                  <rect width="170" height="130" rx="4" fill="#111c2e" stroke="#00f0ff" stroke-width="1.5"/>
-                  <text x="16" y="30" fill="#00f0ff" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">CLIENT LAYER</text>
-                  <text x="16" y="56" fill="#c4d1e8" font-family="'JetBrains Mono', monospace" font-size="10">Blade Templates</text>
-                  <text x="16" y="76" fill="#c4d1e8" font-family="'JetBrains Mono', monospace" font-size="10">Bootstrap 5 UI</text>
-                  <text x="16" y="96" fill="#c4d1e8" font-family="'JetBrains Mono', monospace" font-size="10">Vanilla JS Cart</text>
-                  <text x="16" y="116" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="9">RESPONSIVE / WCAG</text>
-                </g>
-                <path d="M260 215 H350" stroke="#00f0ff" stroke-width="2" stroke-dasharray="5 4"/>
-                <polygon points="350,211 362,215 350,219" fill="#00f0ff"/>
-
-                <g transform="translate(370, 140)">
-                  <rect width="200" height="155" rx="4" fill="#111c2e" stroke="#fca311" stroke-width="1.5"/>
-                  <text x="16" y="30" fill="#fca311" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">LARAVEL BACKEND</text>
-                  <text x="16" y="56" fill="#c4d1e8" font-family="'JetBrains Mono', monospace" font-size="10">MVC Architecture</text>
-                  <text x="16" y="76" fill="#c4d1e8" font-family="'JetBrains Mono', monospace" font-size="10">Eloquent ORM</text>
-                  <text x="16" y="96" fill="#c4d1e8" font-family="'JetBrains Mono', monospace" font-size="10">Auth (Breeze)</text>
-                  <text x="16" y="116" fill="#c4d1e8" font-family="'JetBrains Mono', monospace" font-size="10">Product &amp; Order Mgmt</text>
-                  <text x="16" y="136" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="9">RESTful Routing</text>
-                </g>
-
-                <!-- Two arrows from Laravel to MySQL and Midtrans -->
-                <path d="M580 200 H680" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="5 4"/>
-                <polygon points="680,196 692,200 680,204" fill="#8b5cf6"/>
-                <path d="M580 260 H680" stroke="#ff2a85" stroke-width="2" stroke-dasharray="5 4"/>
-                <polygon points="680,256 692,260 680,264" fill="#ff2a85"/>
-
-                <g transform="translate(700, 140)">
-                  <rect width="170" height="110" rx="4" fill="#111c2e" stroke="#8b5cf6" stroke-width="1.5"/>
-                  <text x="16" y="30" fill="#8b5cf6" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">MYSQL DATABASE</text>
-                  <text x="16" y="56" fill="#c4d1e8" font-family="'JetBrains Mono', monospace" font-size="10">Products / Orders</text>
-                  <text x="16" y="76" fill="#c4d1e8" font-family="'JetBrains Mono', monospace" font-size="10">Users / Cart Items</text>
-                  <text x="16" y="96" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="9">Migrations &amp; Seeders</text>
-                </g>
-
-                <g transform="translate(700, 270)">
-                  <rect width="170" height="110" rx="4" fill="#111c2e" stroke="#ff2a85" stroke-width="1.5"/>
-                  <text x="16" y="30" fill="#ff2a85" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">MIDTRANS</text>
-                  <text x="16" y="56" fill="#c4d1e8" font-family="'JetBrains Mono', monospace" font-size="10">Payment Gateway</text>
-                  <text x="16" y="76" fill="#c4d1e8" font-family="'JetBrains Mono', monospace" font-size="10">Snap UI / Webhook</text>
-                  <text x="16" y="96" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="9">SANDBOX + LIVE KEYS</text>
-                </g>
-
-                <text x="80" y="48" fill="#f1f5f9" font-family="'Chakra Petch', sans-serif" font-size="16" font-weight="600">DYACARA // FULL-STACK E-COMMERCE PLATFORM</text>
-                <text x="80" y="410" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="9" letter-spacing="1.5">STACK: LARAVEL 11 + BLADE + MYSQL + MIDTRANS PAYMENT</text>
-              </svg>
-              <span class="shot__scan"></span>
-            </div>
-
-            <div class="band__body">
-              <div class="band__lead">
-                <h3 class="band__name">DYACARA // LARAVEL E-COMMERCE</h3>
-                <div class="band__ticks">
-                  <span class="band__tick is-on"></span>
-                  <span class="band__tick is-on"></span>
-                  <span class="band__tick is-on"></span>
-                  <span class="band__tick is-on"></span>
-                </div>
-              </div>
-
-              <div class="band__copy">
-                <p class="band__desc">
-                  Platform e-commerce full-stack berbasis Laravel 11 dengan arsitektur MVC lengkap. Fitur mencakup manajemen produk &amp; stok, sistem autentikasi Breeze, keranjang belanja dinamis, checkout terintegrasi Midtrans (Snap UI + webhook), serta panel admin untuk pemantauan pesanan secara real-time.
-                </p>
-              </div>
-
-              <div class="band__actions">
-                <a class="band__btn band__btn--primary" href="https://github.com/Abysmaa/Dyacara_web" target="_blank" rel="noopener noreferrer" aria-label="View Dyacara source code on GitHub">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.929.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-                  GITHUB SOURCE
-                </a>
-                <a class="band__btn" href="https://dyacara-web.vercel.app/" target="_blank" rel="noopener noreferrer">LIVE DEMO &nearr;</a>
-              </div>
-
-              <div class="card__tags">
-                <span>LARAVEL 11</span>
-                <span>PHP</span>
-                <span>BLADE</span>
-                <span>MYSQL</span>
-                <span>MIDTRANS</span>
-                <span>BOOTSTRAP 5</span>
-                <span>ELOQUENT ORM</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 2: six-monkeys-web — Laravel Café / Event Management -->
-          <article class="band panel" data-category="web">
-            <div class="panel__tag">
-              <span class="band__id">PRJ-02 // WEB APP &amp; MENU MANAGEMENT SYSTEM</span>
-              <span class="band__rule"></span>
-              <span class="band__hint">FULL-STACK WEB APP</span>
-            </div>
-            
-            <div class="shot shot--project">
-              <svg class="schema" viewBox="0 0 1200 440" preserveAspectRatio="xMidYMid slice" aria-label="Six Monkeys Web — Café Management System">
-                <rect width="1200" height="440" fill="#0a101b"/>
-                <path d="M0 60 H1200 M0 120 H1200 M0 180 H1200 M0 240 H1200 M0 300 H1200 M0 360 H1200" stroke="#1a273e" stroke-width="1"/>
-
-                <!-- Menu Card UI Mockup -->
-                <g transform="translate(80, 110)">
-                  <rect width="240" height="220" rx="6" fill="#111c2e" stroke="#00f0ff" stroke-width="1.5"/>
-                  <rect x="0" y="0" width="240" height="100" rx="6" fill="#1a2d4a"/>
-                  <!-- Coffee cup icon mockup -->
-                  <text x="100" y="65" fill="#00f0ff" font-family="'Chakra Petch', sans-serif" font-size="36" text-anchor="middle">☕</text>
-                  <text x="20" y="130" fill="#f1f5f9" font-family="'Chakra Petch', sans-serif" font-size="13" font-weight="600">Espresso Classico</text>
-                  <text x="20" y="152" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="9">Single Origin Arabica</text>
-                  <text x="20" y="175" fill="#00f0ff" font-family="'Chakra Petch', sans-serif" font-size="14" font-weight="700">Rp 35.000</text>
-                  <rect x="20" y="190" width="90" height="24" rx="4" fill="#00f0ff" opacity="0.15" stroke="#00f0ff" stroke-width="1"/>
-                  <text x="40" y="207" fill="#00f0ff" font-family="'JetBrains Mono', monospace" font-size="9">ADD TO ORDER</text>
-                </g>
-
-                <g transform="translate(350, 110)">
-                  <rect width="240" height="220" rx="6" fill="#111c2e" stroke="#fca311" stroke-width="1.5"/>
-                  <rect x="0" y="0" width="240" height="100" rx="6" fill="#2a1d0e"/>
-                  <text x="100" y="65" fill="#fca311" font-family="'Chakra Petch', sans-serif" font-size="36" text-anchor="middle">🧇</text>
-                  <text x="20" y="130" fill="#f1f5f9" font-family="'Chakra Petch', sans-serif" font-size="13" font-weight="600">Belgian Waffle Plate</text>
-                  <text x="20" y="152" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="9">Served with whipped cream</text>
-                  <text x="20" y="175" fill="#fca311" font-family="'Chakra Petch', sans-serif" font-size="14" font-weight="700">Rp 55.000</text>
-                  <rect x="20" y="190" width="90" height="24" rx="4" fill="#fca311" opacity="0.15" stroke="#fca311" stroke-width="1"/>
-                  <text x="40" y="207" fill="#fca311" font-family="'JetBrains Mono', monospace" font-size="9">ADD TO ORDER</text>
-                </g>
-
-                <!-- Admin Panel Mockup on Right -->
-                <g transform="translate(660, 90)">
-                  <rect width="460" height="260" rx="6" fill="#0d1826" stroke="#233654" stroke-width="1.5"/>
-                  <text x="20" y="30" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="9" letter-spacing="2">ADMIN DASHBOARD // ORDER MANAGEMENT</text>
-                  <line x1="0" y1="42" x2="460" y2="42" stroke="#1e2f49" stroke-width="1"/>
-                  <!-- Table rows -->
-                  <text x="20" y="68" fill="#00f0ff" font-family="'JetBrains Mono', monospace" font-size="10">#ORD-241  TABLE 04  Rp 125.000  COMPLETED</text>
-                  <text x="20" y="92" fill="#fca311" font-family="'JetBrains Mono', monospace" font-size="10">#ORD-242  TABLE 07  Rp 90.000   IN PROGRESS</text>
-                  <text x="20" y="116" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="10">#ORD-243  TABLE 02  Rp 210.000  PENDING</text>
-                  <text x="20" y="140" fill="#00f0ff" font-family="'JetBrains Mono', monospace" font-size="10">#ORD-244  TABLE 11  Rp 75.000   COMPLETED</text>
-                  <line x1="0" y1="155" x2="460" y2="155" stroke="#1e2f49" stroke-width="1"/>
-                  <text x="20" y="185" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="9">DAILY REVENUE</text>
-                  <text x="20" y="210" fill="#f1f5f9" font-family="'Chakra Petch', sans-serif" font-size="22" font-weight="700">Rp 4.820.000</text>
-                  <text x="220" y="185" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="9">ACTIVE TABLES</text>
-                  <text x="220" y="210" fill="#00f0ff" font-family="'Chakra Petch', sans-serif" font-size="22" font-weight="700">07 / 12</text>
-                </g>
-
-                <text x="80" y="50" fill="#f1f5f9" font-family="'Chakra Petch', sans-serif" font-size="16" font-weight="600">SIX MONKEYS // CAFÉ &amp; MENU MANAGEMENT SYSTEM</text>
-                <text x="80" y="410" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="9" letter-spacing="1.5">STACK: LARAVEL + BLADE + MYSQL + ROLE-BASED AUTH</text>
-              </svg>
-              <span class="shot__scan"></span>
-            </div>
-
-            <div class="band__body">
-              <div class="band__lead">
-                <h3 class="band__name">SIX MONKEYS // CAFÉ MANAGEMENT SYSTEM</h3>
-                <div class="band__ticks">
-                  <span class="band__tick is-on"></span>
-                  <span class="band__tick is-on"></span>
-                  <span class="band__tick is-on"></span>
-                  <span class="band__tick"></span>
-                </div>
-              </div>
-
-              <div class="band__copy">
-                <p class="band__desc">
-                  Sistem manajemen kafe berbasis web dengan fitur katalog menu dinamis, pemrosesan pesanan per meja, dan panel admin dengan kontrol berbasis peran (role-based access). Dibangun di atas Laravel dengan Blade templating, MySQL, dan autentikasi multi-level untuk kasir, dapur, dan manajer.
-                </p>
-              </div>
-
-              <div class="band__actions">
-                <a class="band__btn band__btn--primary" href="https://github.com/Abysmaa/six-monkeys-web" target="_blank" rel="noopener noreferrer" aria-label="View Six Monkeys source code on GitHub">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.929.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-                  GITHUB SOURCE
-                </a>
-              </div>
-
-              <div class="card__tags">
-                <span>LARAVEL</span>
-                <span>PHP</span>
-                <span>BLADE</span>
-                <span>MYSQL</span>
-                <span>BOOTSTRAP</span>
-                <span>ROLE-BASED AUTH</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 3: IMK-bro — Human-Computer Interaction Study -->
-          <article class="band panel" data-category="web data">
-            <div class="panel__tag">
-              <span class="band__id">PRJ-03 // UI/UX &amp; HUMAN-COMPUTER INTERACTION</span>
-              <span class="band__rule"></span>
-              <span class="band__hint">ACADEMIC PROJECT</span>
-            </div>
-            
-            <div class="shot shot--project">
-              <svg class="schema" viewBox="0 0 1200 440" preserveAspectRatio="xMidYMid slice" aria-label="IMK-bro Human Computer Interaction">
-                <rect width="1200" height="440" fill="#080e18"/>
-                <path d="M0 60 H1200 M0 120 H1200 M0 180 H1200 M0 240 H1200 M0 300 H1200 M0 360 H1200" stroke="#162338" stroke-width="1"/>
-
-                <!-- HCI Model: User ↔ Interface ↔ System -->
-                <!-- User Node -->
-                <g transform="translate(100, 165)">
-                  <circle cx="60" cy="60" r="55" fill="#0d1826" stroke="#00f0ff" stroke-width="1.5"/>
-                  <text x="60" y="50" fill="#00f0ff" font-family="'Chakra Petch', sans-serif" font-size="28" text-anchor="middle">👤</text>
-                  <text x="60" y="78" fill="#c4d1e8" font-family="'JetBrains Mono', monospace" font-size="9" text-anchor="middle">USER</text>
-                  <text x="60" y="92" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="8" text-anchor="middle">MENTAL MODEL</text>
-                </g>
-
-                <!-- Bidirectional Arrow: User ↔ Interface -->
-                <path d="M218 225 H360" stroke="#00f0ff" stroke-width="2" stroke-dasharray="5 4"/>
-                <polygon points="360,221 372,225 360,229" fill="#00f0ff"/>
-                <polygon points="218,221 206,225 218,229" fill="#00f0ff"/>
-                <text x="270" y="215" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="8">INPUT / FEEDBACK</text>
-
-                <!-- Interface Node -->
-                <g transform="translate(370, 120)">
-                  <rect width="200" height="200" rx="6" fill="#0f1d30" stroke="#fca311" stroke-width="1.5"/>
-                  <text x="100" y="30" fill="#fca311" font-family="'JetBrains Mono', monospace" font-size="10" text-anchor="middle" font-weight="700">INTERFACE</text>
-                  <!-- Wireframe elements -->
-                  <rect x="20" y="50" width="160" height="20" rx="3" fill="#1a2d4a" stroke="#2a3f63" stroke-width="1"/>
-                  <text x="30" y="65" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="8">NAVIGATION BAR</text>
-                  <rect x="20" y="80" width="70" height="50" rx="3" fill="#1a2d4a" stroke="#2a3f63" stroke-width="1"/>
-                  <rect x="100" y="80" width="80" height="50" rx="3" fill="#1a2d4a" stroke="#2a3f63" stroke-width="1"/>
-                  <rect x="20" y="140" width="160" height="30" rx="3" fill="#00f0ff" opacity="0.1" stroke="#00f0ff" stroke-width="1"/>
-                  <text x="100" y="160" fill="#00f0ff" font-family="'JetBrains Mono', monospace" font-size="9" text-anchor="middle">CTA BUTTON</text>
-                  <text x="100" y="185" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="8" text-anchor="middle">USABILITY HEURISTICS</text>
-                </g>
-
-                <!-- Bidirectional Arrow: Interface ↔ System -->
-                <path d="M580 225 H700" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="5 4"/>
-                <polygon points="700,221 712,225 700,229" fill="#8b5cf6"/>
-                <polygon points="580,221 568,225 580,229" fill="#8b5cf6"/>
-                <text x="615" y="215" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="8">PROCESS / RESPONSE</text>
-
-                <!-- System Node -->
-                <g transform="translate(715, 160)">
-                  <rect width="200" height="130" rx="6" fill="#0d1826" stroke="#8b5cf6" stroke-width="1.5"/>
-                  <text x="100" y="30" fill="#8b5cf6" font-family="'JetBrains Mono', monospace" font-size="10" text-anchor="middle" font-weight="700">SYSTEM</text>
-                  <text x="20" y="60" fill="#c4d1e8" font-family="'JetBrains Mono', monospace" font-size="9">Task Analysis</text>
-                  <text x="20" y="80" fill="#c4d1e8" font-family="'JetBrains Mono', monospace" font-size="9">Cognitive Load Eval.</text>
-                  <text x="20" y="100" fill="#c4d1e8" font-family="'JetBrains Mono', monospace" font-size="9">Error Prevention</text>
-                  <text x="20" y="120" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="8">ISO 9241 / NIELSEN</text>
-                </g>
-
-                <!-- Usability Metrics Bottom -->
-                <g transform="translate(950, 140)">
-                  <rect width="180" height="155" rx="4" fill="#111c2e" stroke="#233654" stroke-width="1"/>
-                  <text x="16" y="28" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="9" letter-spacing="1">USABILITY METRICS</text>
-                  <text x="16" y="52" fill="#00f0ff" font-family="'Chakra Petch', sans-serif" font-size="14" font-weight="700">SUS SCORE</text>
-                  <text x="16" y="72" fill="#f1f5f9" font-family="'Chakra Petch', sans-serif" font-size="20" font-weight="700">82.5 / 100</text>
-                  <text x="16" y="100" fill="#fca311" font-family="'Chakra Petch', sans-serif" font-size="14" font-weight="700">TASK SUCCESS</text>
-                  <text x="16" y="120" fill="#f1f5f9" font-family="'Chakra Petch', sans-serif" font-size="20" font-weight="700">91.4%</text>
-                  <text x="16" y="148" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="8">n=20 PARTICIPANTS</text>
-                </g>
-
-                <text x="80" y="48" fill="#f1f5f9" font-family="'Chakra Petch', sans-serif" font-size="16" font-weight="600">IMK-BRO // HUMAN-COMPUTER INTERACTION STUDY</text>
-                <text x="80" y="410" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="9" letter-spacing="1.5">STACK: HTML + CSS + JS • USER RESEARCH • USABILITY TESTING</text>
-              </svg>
-              <span class="shot__scan"></span>
-            </div>
-
-            <div class="band__body">
-              <div class="band__lead">
-                <h3 class="band__name">IMK-BRO // HCI &amp; USABILITY STUDY</h3>
-                <div class="band__ticks">
-                  <span class="band__tick is-on"></span>
-                  <span class="band__tick is-on"></span>
-                  <span class="band__tick is-on"></span>
-                  <span class="band__tick"></span>
-                </div>
-              </div>
-
-              <div class="band__copy">
-                <p class="band__desc">
-                  Proyek studi Interaksi Manusia-Komputer (IMK) yang menerapkan prinsip desain berbasis pengguna, evaluasi heuristik Nielsen, dan pengujian usabilitas terstruktur. Menganalisis pola interaksi, beban kognitif, dan faktor aksesibilitas untuk menghasilkan antarmuka web yang intuitif dan berpusat pada pengguna.
-                </p>
-              </div>
-
-              <div class="band__actions">
-                <a class="band__btn band__btn--primary" href="https://github.com/Abysmaa/IMK-bro" target="_blank" rel="noopener noreferrer" aria-label="View IMK-bro source code on GitHub">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.929.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-                  GITHUB SOURCE
-                </a>
-              </div>
-
-              <div class="card__tags">
-                <span>HTML5</span>
-                <span>CSS3</span>
-                <span>JAVASCRIPT</span>
-                <span>USER RESEARCH</span>
-                <span>USABILITY TESTING</span>
-                <span>HCI PRINCIPLES</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 4: Digi Bank BJB Sentiment Analysis -->
-          <article class="band panel" data-category="data">
-            <div class="panel__tag">
-              <span class="band__id">PRJ-04 // SENTIMENT ANALYSIS &amp; TOPIC MODELING</span>
-              <span class="band__rule"></span>
-              <span class="band__hint">FEATURED GITHUB PROJECT</span>
-            </div>
-
-            <div class="result-shot" role="img" aria-label="Digi Bank BJB sentiment analysis results: 6,431 reviews, 92.75 percent accuracy, and 4 dominant topics">
-              <div class="result-shot__head">
-                <span>DIGI BANK BJB // REVIEW INTELLIGENCE</span>
-                <span class="result-shot__status">ANALYSIS COMPLETE</span>
-              </div>
-              <div class="result-shot__grid">
-                <div class="result-stat">
-                  <span class="result-stat__label">RAW REVIEWS</span>
-                  <strong>6,431</strong>
-                  <small>GOOGLE PLAY STORE</small>
-                </div>
-                <div class="result-stat result-stat--accent">
-                  <span class="result-stat__label">MODEL ACCURACY</span>
-                  <strong>92.75%</strong>
-                  <small>INDOBERT CLASSIFICATION</small>
-                </div>
-                <div class="result-stat">
-                  <span class="result-stat__label">CLEAN DATA</span>
-                  <strong>6,396</strong>
-                  <small>AFTER PREPROCESSING</small>
-                </div>
-                <div class="result-stat result-stat--amber">
-                  <span class="result-stat__label">DOMINANT TOPICS</span>
-                  <strong>04</strong>
-                  <small>LOGIN &amp; ACCESS HIGHEST</small>
-                </div>
-              </div>
-            </div>
-
-            <div class="band__body">
-              <div class="band__lead">
-                <h3 class="band__name">DIGI BANK BJB // SENTIMENT INTELLIGENCE</h3>
-                <div class="band__ticks">
-                  <span class="band__tick is-on"></span>
-                  <span class="band__tick is-on"></span>
-                  <span class="band__tick is-on"></span>
-                  <span class="band__tick is-on"></span>
-                </div>
-              </div>
-
-              <div class="band__copy">
-                <p class="band__desc">
-                  Analisis ulasan aplikasi Digi Bank BJB dari Google Play Store menggunakan IndoBERT untuk klasifikasi sentimen dan Latent Dirichlet Allocation (LDA) untuk menemukan pola topik utama. Hasilnya merangkum 6.396 ulasan bersih dengan akurasi model 92,75% dan empat topik dominan.
-                </p>
-              </div>
-
-              <div class="band__actions">
-                <a class="band__btn band__btn--primary" href="https://github.com/Abysmaa#featured-project" target="_blank" rel="noopener noreferrer">VIEW GITHUB PROFILE &nearr;</a>
-              </div>
-
-              <div class="card__tags">
-                <span>PYTHON</span>
-                <span>INDOBERT</span>
-                <span>LDA</span>
-                <span>PANDAS</span>
-                <span>NUMPY</span>
-                <span>STREAMLIT</span>
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </section>
-
-      <!-- ── SECTION 03: EXPERIENCE ──────────────────────────────── -->
-      <section id="experience" class="sec">
-        <div class="sec__head">
-          <span class="sec__idx">03</span>
-          <h2 class="sec__title" data-split>EXPERIENCE // SYSTEM LOGS</h2>
-          <span class="sec__rule"></span>
-        </div>
-        <p class="sec__lede">Rekam jejak profesional dalam rekayasa aplikasi web dan analitik data.</p>
-
-        <div class="panel logs" id="expList">
-
-          <!-- Log Item 1 -->
-          <div class="log">
-            <div class="log__when">
-              <span class="log__from">2024</span>
-              <span class="log__dash"></span>
-              <span class="log__to">PRESENT</span>
-            </div>
-            <div class="log__main">
-              <h3 class="log__role">FULL STACK DEVELOPER &amp; DATA ANALYST</h3>
-              <p class="log__org">INDEPENDENT CONTRACTOR &bull; FREELANCE ARCHITECT</p>
-              <p class="log__desc">
-                Merancang dan meluncurkan solusi web custom berkinerja tinggi untuk berbagai klien, mengintegrasikan sistem autentikasi, database PostgreSQL/MongoDB, serta dashboard pelaporan analitik berbasis data nyata untuk optimalisasi konversi dan automasi operasional.
-              </p>
-            </div>
-            <div class="log__where">
-              <span class="log__loc">REMOTE / ID</span>
-              <span class="log__idx">#01</span>
-            </div>
-          </div>
-
-          <!-- Log Item 2 -->
-          <div class="log">
-            <div class="log__when">
-              <span class="log__from">2023</span>
-              <span class="log__dash"></span>
-              <span class="log__to">2024</span>
-            </div>
-            <div class="log__main">
-              <h3 class="log__role">DATA ANALYST &amp; FRONTEND SPECIALIST</h3>
-              <p class="log__org">DIGITAL INITIATIVES &amp; LABS</p>
-              <p class="log__desc">
-                Melakukan analisis statistik eksploratif (EDA) terhadap ratusan ribu entri data, menyusun model segmentasi pengguna, serta mengonversikan temuan data menjadi antarmuka visualisasi web interaktif yang mudah dipahami oleh stakeholder manajemen dan non-teknis.
-              </p>
-            </div>
-            <div class="log__where">
-              <span class="log__loc">JAKARTA / ID</span>
-              <span class="log__idx">#02</span>
-            </div>
-          </div>
-
-          <!-- Log Item 3 -->
-          <div class="log">
-            <div class="log__when">
-              <span class="log__from">2022</span>
-              <span class="log__dash"></span>
-              <span class="log__to">2023</span>
-            </div>
-            <div class="log__main">
-              <h3 class="log__role">WEB SOFTWARE DEVELOPER</h3>
-              <p class="log__org">SOFTWARE DEVELOPMENT PROJECTS</p>
-              <p class="log__desc">
-                Membangun antarmuka web modern dengan fokus pada performa web vitals, aksesibilitas semantik, integrasi RESTful API, dan pengujian unit pengujian fungsional untuk memastikan skalabilitas kode dan pengalaman pengguna yang mulus.
-              </p>
-            </div>
-            <div class="log__where">
-              <span class="log__loc">INDONESIA</span>
-              <span class="log__idx">#03</span>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- ── SECTION 04: TECH MATRIX ─────────────────────────────── -->
-      <section id="stack" class="sec">
-        <div class="sec__head">
-          <span class="sec__idx">04</span>
-          <h2 class="sec__title" data-split>TECH MATRIX // EQUIPMENT</h2>
-          <span class="sec__rule"></span>
-        </div>
-        <p class="sec__lede">Keahlian teknis, bahasa pemrograman, framework, dan perkakas data.</p>
-
-        <div class="grid grid--stack" id="stackGrid">
-
-          <!-- Tile 1: Frontend Architecture -->
-          <div class="panel tile" style="--lvl: 94%;">
-            <span class="tile__k">SYS.01 // CLIENT-SIDE</span>
-            <h3 class="tile__v">FRONTEND DEVELOPMENT</h3>
-            <p class="tile__d">
-              React, Next.js, TypeScript, JavaScript (ES6+), Vanilla CSS, Tailwind, Responsive HUD Design, Web Vitals &amp; Performance.
-            </p>
-            <div class="tile__bar"><i></i></div>
-            <div class="tile__meta">
-              <span>PROFICIENCY</span>
-              <span>94%</span>
-            </div>
-          </div>
-
-          <!-- Tile 2: Backend & Systems -->
-          <div class="panel tile" style="--lvl: 90%;">
-            <span class="tile__k">SYS.02 // SERVER-SIDE</span>
-            <h3 class="tile__v">BACKEND &amp; APIS</h3>
-            <p class="tile__d">
-              Node.js, Express, Python (FastAPI / Flask), RESTful API Engineering, GraphQL, WebSockets, JWT Auth, Microservices.
-            </p>
-            <div class="tile__bar"><i></i></div>
-            <div class="tile__meta">
-              <span>PROFICIENCY</span>
-              <span>90%</span>
-            </div>
-          </div>
-
-          <!-- Tile 3: Data Analytics & Science -->
-          <div class="panel tile" style="--lvl: 92%;">
-            <span class="tile__k">SYS.03 // DATA INTELLIGENCE</span>
-            <h3 class="tile__v">DATA ANALYSIS &amp; BI</h3>
-            <p class="tile__d">
-              Python (Pandas, NumPy, Scikit-Learn), SQL (PostgreSQL, BigQuery), Data Cleansing, EDA, Tableau, PowerBI, Statistical Modeling.
-            </p>
-            <div class="tile__bar"><i></i></div>
-            <div class="tile__meta">
-              <span>PROFICIENCY</span>
-              <span>92%</span>
-            </div>
-          </div>
-
-          <!-- Tile 4: Database & DevOps -->
-          <div class="panel tile" style="--lvl: 88%;">
-            <span class="tile__k">SYS.04 // INFRASTRUCTURE</span>
-            <h3 class="tile__v">DATABASE &amp; DEVOPS</h3>
-            <p class="tile__d">
-              PostgreSQL, MySQL, MongoDB, Redis, Docker, Git / GitHub Workflows, CI/CD, Linux Server Management, Cloud Deployments.
-            </p>
-            <div class="tile__bar"><i></i></div>
-            <div class="tile__meta">
-              <span>PROFICIENCY</span>
-              <span>88%</span>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- ── SECTION 05: DATA TELEMETRY / INSIGHTS ───────────────── -->
-      <section id="insights" class="sec">
-        <div class="sec__head">
-          <span class="sec__idx">05</span>
-          <h2 class="sec__title" data-split>LIVE DATA TELEMETRY</h2>
-          <span class="sec__rule"></span>
-        </div>
-        <p class="sec__lede">Simulasi visualisasi data interaktif &amp; analisis anomali frekuensi real-time.</p>
-
-        <div class="panel telemetry-card">
-          <div class="panel__tag">
-            <span>DATA.MONITOR // STREAMING PERFORMANCE SENSORS</span>
-            <span class="telemetry-live-badge">&bull; LIVE METRICS</span>
-          </div>
-
-          <div class="telemetry-canvas-wrap">
-            <canvas id="telemetryCanvas" width="1100" height="280"></canvas>
-          </div>
-
-          <div class="telemetry-controls">
-            <div class="telemetry-control-stat">
-              <span class="t-label">DATA THROUGHPUT</span>
-              <span class="t-value" id="tThroughput">2,840 REQ/S</span>
-            </div>
-            <div class="telemetry-control-stat">
-              <span class="t-label">LATENCY P99</span>
-              <span class="t-value" id="tLatency">18.4 MS</span>
-            </div>
-            <div class="telemetry-control-stat">
-              <span class="t-label">DATASET CLEANLINESS</span>
-              <span class="t-value" id="tAccuracy">99.82%</span>
-            </div>
-            <div class="telemetry-control-stat">
-              <span class="t-label">ANOMALIES DETECTED</span>
-              <span class="t-value text-accent" id="tAnomalies">0 ZERO</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ── SECTION 06: CONTACT / SECURE TRANSMISSION ──────────── -->
-      <section id="contact" class="sec sec--contact">
-        <div class="sec__head">
-          <span class="sec__idx">06</span>
-          <h2 class="sec__title" data-split>SECURE TRANSMISSION // CONTACT</h2>
-          <span class="sec__rule"></span>
-        </div>
-      </section>
-
-    </main>
-
-    <!-- ══ FOOTER INTERFACE ════════════════════════════════════════ -->
-    <footer class="foot">
-      <!-- Watermark Background Text -->
-      <div class="foot__back" aria-hidden="true">
-        <svg class="mark mark--still" viewBox="0 0 64 64">
-          <circle class="mark__ring" cx="32" cy="32" r="28" />
-          <path class="mark__s" d="M18 44 L32 16 L46 44 M23 34 H41" />
-        </svg>
-        <span>ABIYU BISMA</span>
-        <svg class="sl" viewBox="0 0 14 12" aria-hidden="true"><path d="M3.6 0h2.5L2.5 12H0zM10.9 0h2.5L9.8 12H7.3z"/></svg>
-      </div>
-
-      <div class="foot__card panel">
-        
-        <!-- Footer Lead -->
-        <div class="foot__lead">
-          <p class="foot__k">
-            ABIYU BISMA <svg class="sl" viewBox="0 0 14 12" aria-hidden="true"><path d="M3.6 0h2.5L2.5 12H0zM10.9 0h2.5L9.8 12H7.3z"/></svg> EST. 2024
-          </p>
-          <h3 class="foot__title">LET'S BUILD SOMETHING EXTRAORDINARY.</h3>
-          <p class="foot__sub">
-            Full Stack Web Developer &amp; Data Analyst<br />
-            Jakarta, Indonesia &bull; Open for Remote &amp; Global Opportunities
-          </p>
-          <button class="foot__cta" type="button" id="chatOpen">
-            INITIALIZE CHAT <svg class="arrow" viewBox="0 0 24 12" aria-hidden="true"><path d="M0 6h20M15 1l5 5-5 5"/></svg>
-          </button>
-        </div>
-
-        <!-- Footer Columns Links -->
-        <div class="foot__cols">
-          <div class="foot__col">
-            <span class="foot__h">NAVIGATION</span>
-            <ul class="foot__list">
-              <li><a href="#profile">PROFILE</a></li>
-              <li><a href="#projects">PROJECTS</a></li>
-              <li><a href="#experience">EXPERIENCE</a></li>
-              <li><a href="#stack">TECH MATRIX</a></li>
-              <li><a href="#insights">DATA TELEMETRY</a></li>
-            </ul>
-          </div>
-
-          <div class="foot__col">
-            <span class="foot__h">CHANNELS</span>
-            <ul class="foot__list">
-              <li><a href="https://github.com/Abysmaa" target="_blank" rel="noopener">GITHUB &nearr;</a></li>
-              <li><a href="https://www.linkedin.com/in/muhammad-abiyu-bisma-reswara-oetama-6bb65030b" target="_blank" rel="noopener noreferrer">LINKEDIN &nearr;</a></li>
-              <li><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mabiyu25%40gmail.com" target="_blank" rel="noopener noreferrer">EMAIL &nearr;</a></li>
-              <li><a href="https://www.instagram.com/abiyubismaa" target="_blank" rel="noopener noreferrer">INSTAGRAM &nearr;</a></li>
-            </ul>
-          </div>
-
-          <div class="foot__col">
-            <span class="foot__h">DOCUMENTS</span>
-            <ul class="foot__list">
-              <li><a href="./CV_ATS_MUHAMMAD%20ABIYU%20BISMA%20RESWARA%20OETAMA.pdf" id="cvLink" target="_blank" rel="noopener">RESUME &bull; CV PDF</a></li>
-              <li><a href="#top">TOP OF TELEMETRY &uarr;</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Slide-out Terminal Chat Drawer -->
-        <div class="foot__chat" id="chat" inert aria-hidden="true">
-          <div class="foot__chat-in">
-            <button class="foot__close" type="button" id="chatClose">
-              <svg class="arrow arrow--back" viewBox="0 0 24 12" aria-hidden="true"><path d="M24 6H4M9 1L4 6l5 5"/></svg> CLOSE TERMINAL
-            </button>
-            <p class="contact__lede">TRANSMIT A DIRECT MESSAGE</p>
-            <p class="contact__note">
-              Tertarik merekrut, bekerja sama dalam proyek web, atau membutuhkan analisis data yang mendalam? Kirimkan pesan langsung melalui terminal ini.
-            </p>
-            
-            <form class="cform" id="contactForm" novalidate>
-              <div class="cform__box">
-                <input class="cform__in" type="text" name="name" placeholder="ENTER YOUR NAME / IDENTITY" required autocomplete="name" aria-label="Your Name" />
-                <input class="cform__in" type="email" name="email" placeholder="ENTER YOUR EMAIL ADDRESS" required autocomplete="email" aria-label="Your Email" />
-                <textarea class="cform__in cform__msg" name="message" rows="3" placeholder="DESCRIBE YOUR PROJECT OR INQUIRY..." required aria-label="Message"></textarea>
-                <button class="cform__go" type="submit" aria-label="Send Transmission">
-                  <svg class="arrow" viewBox="0 0 24 12" aria-hidden="true"><path d="M0 6h20M15 1l5 5-5 5"/></svg>
-                </button>
-              </div>
-              <p class="cform__foot">
-                <span class="cform__status" id="contactStatus" role="status" aria-live="polite"></span>
-                <span class="cform__alt">DIRECT DISPATCH: <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=mabiyu25%40gmail.com" target="_blank" rel="noopener noreferrer">MABIYU25@GMAIL.COM</a></span>
-              </p>
-            </form>
-          </div>
-        </div>
-
-        <!-- Footer Base Bar -->
-        <div class="foot__base">
-          <span class="foot__status"><i></i>SYSTEM STATUS: OPERATIONAL</span>
-          <span>&copy; 2026 MUHAMMAD ABIYU BISMA RESWARA OETAMA</span>
-          <span class="foot__spacer"></span>
-          <span class="foot__clock-label">LOCAL CLOCK:</span>
-          <span id="clock">--:--:--</span>
-        </div>
-
-      </div>
-    </footer>
-
+</header>
+
+<main id="konten">
+<section id="proyek" aria-labelledby="proyek-title">
+  <h2 id="proyek-title">Proyek</h2>
+  <p class="intro">Jelajahi proyek analisis data, pengembangan web, dan keamanan aplikasi.</p>
+  <div class="tabs" role="group" aria-label="Filter proyek berdasarkan bidang">
+    <button type="button" aria-pressed="true" data-mode="all">Semua</button>
+    <button type="button" aria-pressed="false" data-mode="data">Data</button>
+    <button type="button" aria-pressed="false" data-mode="web">Web</button>
+    <button type="button" aria-pressed="false" data-mode="sec">Keamanan</button>
+    <span class="hint" id="filter-status" role="status" aria-live="polite">Semua proyek ditampilkan</span>
   </div>
+  <div class="rows sheet">
+    <details data-tags="data">
+      <summary><span class="t">Analisis sentimen Digi bank bjb</span><span class="tag">Data</span><span class="r">6.396 ulasan dianalisis. IndoBERT mencapai akurasi uji 92,75%.</span></summary>
+      <div class="body"><ul>
+        <li>Mengumpulkan 6.431 ulasan Google Play (Juli 2024 sampai April 2026), membersihkannya, dan melabeli secara semi-otomatis plus anotasi manual.</li>
+        <li>Fine-tuning IndoBERT untuk sentimen positif dan negatif: 3.479 ulasan positif (54,39%) dan 2.917 negatif (45,61%).</li>
+        <li>LDA pada 1.065 ulasan negatif menghasilkan empat topik: aktivasi dan pembukaan rekening, aktivasi pasca-pembaruan, login dan akses akun, serta transaksi dan saldo.</li>
+        <li>Hasilnya tersaji di dashboard Streamlit lengkap dengan rekomendasi perbaikan layanan.</li></ul>
+        <p>Catatan: hasil ini menggambarkan persepsi pengguna, bukan audit keamanan teknis aplikasi.</p>
+        <div class="dashboard-preview">
+          <div class="dashboard-preview-head">
+            <strong>Cuplikan dashboard</strong>
+            <a href="https://digi-bank-bjb-abiyu.streamlit.app/" target="_blank" rel="noopener noreferrer">Analisis Sentimen Digi bank bjb · Streamlit <span aria-hidden="true">↗</span></a>
+          </div>
+          <iframe src="https://digi-bank-bjb-abiyu.streamlit.app/?embed=true" title="Cuplikan dashboard Analisis Sentimen Digi bank bjb" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div></div>
+    </details>
+    <details data-tags="data">
+      <summary><span class="t">Analisis kemiskinan kabupaten/kota</span><span class="tag">Data</span><span class="r">532 baris data dibersihkan dan dianalisis dengan Python.</span></summary>
+      <div class="body"><ul>
+        <li>Mengubah angka berkoma desimal menjadi numerik, menemukan 16 data duplikat, dan mengisi nilai kosong dengan rata-rata.</li>
+        <li>Mendeteksi outlier dengan metode IQR pada tiap variabel, misalnya PDRB (59) dan kemiskinan (47).</li>
+        <li>Menyusun heatmap korelasi antara kemiskinan, IPM, pengeluaran, sanitasi, air minum, TPT, dan PDRB.</li></ul>
+        <p>Dashboard interaktif untuk proyek ini <span class="wip">sedang dikerjakan</span></p></div>
+    </details>
+    <details data-tags="web">
+      <summary><span class="t">Website Dyacara</span><span class="tag">Web</span><span class="r">Dibangun dari analisis kebutuhan sampai online, dan masih saya pelihara.</span></summary>
+      <div class="body"><ul>
+        <li>Laravel dan MySQL dengan panel admin Filament: katalog layanan dan event, pemesanan dengan unggah bukti pembayaran, galeri, dan formulir kontak.</li>
+        <li>Mengikuti metode Waterfall, dari UML dan perancangan database sampai pengujian black-box dan lintas browser.</li>
+        <li>Uji penerimaan pengguna dari 10 responden menghasilkan indeks kepuasan 89%.</li>
+        <li>Bisa dikunjungi di dyacara.my.id.</li></ul></div>
+    </details>
+    <details data-tags="sec">
+      <summary><span class="t">Uji keamanan Dyacara dan lab OWASP</span><span class="tag">Keamanan</span><span class="r">Memeriksa aplikasi web dengan acuan OWASP Top 10 di lingkungan lokal.<span class="wip">sedang dikerjakan</span></span></summary>
+      <div class="body"><ul>
+        <li>Berlatih di lab legal seperti DVWA dan OWASP Juice Shop, lalu menulis write-up tiap temuan beserta cara pencegahannya.</li>
+        <li>Menguji salinan lokal Dyacara milik sendiri, lalu memperbaiki temuan dan mengujinya ulang.</li></ul>
+        <p>Semua pengujian dilakukan hanya pada sistem milik sendiri atau lab yang sah.</p></div>
+    </details>
+    <details data-tags="sec">
+      <summary><span class="t">Cybersec Journey Tracker</span><span class="tag">Keamanan</span><span class="r">Aplikasi untuk merencanakan dan mencatat progres belajar cybersecurity selama 52 minggu.<span class="wip">sedang dikerjakan</span></span></summary>
+      <div class="body"><ul>
+        <li>Dibuat dengan Streamlit dan SQLite, dengan halaman dashboard, log harian, materi, praktik/lab, jadwal, dan personal best.</li>
+        <li>Mendukung impor workbook, ekspor CSV/Excel, autentikasi Google, serta panduan konfigurasi dan pencadangan data.</li>
+        <li>README memuat fitur, langkah menjalankan lokal, pengaturan deployment, dan petunjuk pemecahan masalah.</li></ul>
+        <p>Demo aplikasi memerlukan akun Google yang sudah diberi akses oleh pemilik.</p>
+        <p><a href="https://cybersec-journey.streamlit.app/" target="_blank" rel="noopener noreferrer">Cybersec Journey Tracker · Streamlit</a> · <a href="https://github.com/Abysmaa/cybersec-journey" target="_blank" rel="noopener noreferrer">Dokumentasi dan source code di GitHub</a></p></div>
+    </details>
+    <details data-tags="web">
+      <summary><span class="t">Website Ikatan Marshall Indonesia</span><span class="tag">Web</span><span class="r">Company profile dinamis dengan panel admin untuk mengelola konten dan permintaan dukungan marshal.</span></summary>
+      <div class="body"><ul>
+        <li>Dikembangkan dengan Laravel 13 dan Filament 5; panel admin mengelola layanan, area layanan, perlengkapan, event, galeri, dan pesan masuk.</li>
+        <li>Fitur publik mencakup halaman responsif, detail berbasis slug, sitemap dinamis, metadata, serta formulir kontak dengan persetujuan penyimpanan.</li>
+        <li>README menjelaskan setup Windows/macOS/Linux, struktur aplikasi, database, route, privasi, dan checklist produksi.</li></ul>
+        <p><a href="https://github.com/Abysmaa/ikatan-marshall-indonesia-web" target="_blank" rel="noopener noreferrer">Lihat repository dan dokumentasi GitHub</a></p></div>
+    </details>
+    <details data-tags="web">
+      <summary><span class="t">Dokumentasi platform Ticketing SaaS</span><span class="tag">Web</span><span class="r">Rancangan produk ticketing dan registrasi event untuk organizer, attendee, petugas gate, dan admin.</span></summary>
+      <div class="body"><ul>
+        <li>Dokumentasi mencakup spesifikasi produk, kebutuhan tiap peran, user flow, roadmap, dan spesifikasi teknis.</li>
+        <li>Meliputi kontrak API, model data relasional, arsitektur, threat model, ADR, serta wireframe puluhan layar.</li>
+        <li>README memberi peta dokumen, urutan membacanya, dan keputusan produk yang masih perlu direkonsiliasi.</li></ul>
+        <p>Repository ini berisi dokumentasi dan wireframe; source aplikasi belum tersedia.</p>
+        <p><a href="https://github.com/Abysmaa/ticketing-voting" target="_blank" rel="noopener noreferrer">Lihat spesifikasi dan dokumentasi GitHub</a></p></div>
+    </details>
+  </div>
+</section>
 
-  <script src="./assets/app.js"></script>
+<section id="pengalaman" aria-labelledby="pengalaman-title">
+  <h2 id="pengalaman-title">Pengalaman</h2>
+  <div class="jobs sheet">
+    <div>
+      <div class="when">Juli 2022 sampai sekarang</div>
+      <div>
+        <h3>Event Lari/Marshall</h3>
+        <p>Merencanakan dan memastikan kegiatan berjalan sesuai dengan aturan yang ada.</p>
+        <details class="experience-docs">
+          <summary><span>Dokumentasi kegiatan</span><span class="experience-docs__count">13 foto</span></summary>
+          <div class="experience-gallery" aria-label="Dokumentasi kegiatan Event Lari/Marshall">
+            <figure><button class="experience-gallery__zoom" type="button" aria-label="Perbesar foto PKB Run Festival 2026"><img src="assets/event-lari/pkb-run-festival-2026.jpeg" alt="Tim di gerbang start PKB Run Festival 2026" width="1280" height="720" loading="lazy" decoding="async"><span class="experience-gallery__zoom-hint" aria-hidden="true">Perbesar</span></button><figcaption>PKB Run Festival 2026</figcaption></figure>
+            <figure><button class="experience-gallery__zoom" type="button" aria-label="Perbesar foto Acer Run 7K"><img src="assets/event-lari/acer-run-7k.jpeg" alt="Tim pada acara Acer Run 7K" width="1024" height="768" loading="lazy" decoding="async"><span class="experience-gallery__zoom-hint" aria-hidden="true">Perbesar</span></button><figcaption>Acer Run 7K</figcaption></figure>
+            <figure><button class="experience-gallery__zoom" type="button" aria-label="Perbesar foto kegiatan kebersamaan tim"><img src="assets/event-lari/team-outing-telaga-inspirasi.jpeg" alt="Tim berkumpul di area Telaga Inspirasi" width="1024" height="768" loading="lazy" decoding="async"><span class="experience-gallery__zoom-hint" aria-hidden="true">Perbesar</span></button><figcaption>Kegiatan kebersamaan tim</figcaption></figure>
+            <figure><button class="experience-gallery__zoom" type="button" aria-label="Perbesar foto dukungan titik hidrasi"><img src="assets/event-lari/water-station-team.jpeg" alt="Relawan bertugas di titik pembagian air minum" width="1151" height="768" loading="lazy" decoding="async"><span class="experience-gallery__zoom-hint" aria-hidden="true">Perbesar</span></button><figcaption>Dukungan titik hidrasi</figcaption></figure>
+            <figure><button class="experience-gallery__zoom" type="button" aria-label="Perbesar foto NOBEL RUN 2026"><img src="assets/event-lari/nobel-run-team-2026.jpeg" alt="Tim di area NOBEL RUN 2026" width="768" height="1024" loading="lazy" decoding="async"><span class="experience-gallery__zoom-hint" aria-hidden="true">Perbesar</span></button><figcaption>NOBEL RUN 2026</figcaption></figure>
+            <figure><button class="experience-gallery__zoom" type="button" aria-label="Perbesar foto Run and Rise 2026"><img src="assets/event-lari/run-and-rise-2026.jpeg" alt="Tim di area Run and Rise 2026" width="768" height="1365" loading="lazy" decoding="async"><span class="experience-gallery__zoom-hint" aria-hidden="true">Perbesar</span></button><figcaption>Run and Rise 2026</figcaption></figure>
+            <figure><button class="experience-gallery__zoom" type="button" aria-label="Perbesar foto tantangan kebugaran"><img src="assets/event-lari/indoor-fitness-challenge.jpeg" alt="Tim pada tantangan Burpee Broad Jump" width="768" height="1365" loading="lazy" decoding="async"><span class="experience-gallery__zoom-hint" aria-hidden="true">Perbesar</span></button><figcaption>Dukungan area tantangan kebugaran</figcaption></figure>
+            <figure><button class="experience-gallery__zoom" type="button" aria-label="Perbesar foto tim marshal malam"><img src="assets/event-lari/night-event-team.jpeg" alt="Relawan dengan rompi reflektif pada kegiatan malam" width="768" height="1365" loading="lazy" decoding="async"><span class="experience-gallery__zoom-hint" aria-hidden="true">Perbesar</span></button><figcaption>Tim marshal pada kegiatan malam</figcaption></figure>
+            <figure><button class="experience-gallery__zoom" type="button" aria-label="Perbesar foto koordinasi rute malam"><img src="assets/event-lari/night-route-marshalling.jpeg" alt="Petugas marshal berkoordinasi di rute lari malam" width="768" height="1024" loading="lazy" decoding="async"><span class="experience-gallery__zoom-hint" aria-hidden="true">Perbesar</span></button><figcaption>Koordinasi rute malam</figcaption></figure>
+            <figure><button class="experience-gallery__zoom" type="button" aria-label="Perbesar foto tim marshal pada event malam"><img src="assets/event-lari/night-shift-team.jpeg" alt="Tim marshal berfoto dengan rompi reflektif saat event malam" width="768" height="1365" loading="lazy" decoding="async"><span class="experience-gallery__zoom-hint" aria-hidden="true">Perbesar</span></button><figcaption>Dokumentasi tim saat event malam</figcaption></figure>
+            <figure><button class="experience-gallery__zoom" type="button" aria-label="Perbesar foto tim di peta rute"><img src="assets/event-lari/run-route-map-team.jpeg" alt="Tim berkumpul di depan peta rute acara lari" width="1024" height="768" loading="lazy" decoding="async"><span class="experience-gallery__zoom-hint" aria-hidden="true">Perbesar</span></button><figcaption>Koordinasi di area peta rute</figcaption></figure>
+            <figure><button class="experience-gallery__zoom" type="button" aria-label="Perbesar foto briefing race pack"><img src="assets/event-lari/race-pack-briefing.jpeg" alt="Tim melakukan briefing di area pengambilan race pack" width="768" height="1024" loading="lazy" decoding="async"><span class="experience-gallery__zoom-hint" aria-hidden="true">Perbesar</span></button><figcaption>Briefing race pack</figcaption></figure>
+            <figure><button class="experience-gallery__zoom" type="button" aria-label="Perbesar foto persiapan titik hidrasi"><img src="assets/event-lari/hydration-station-setup.jpeg" alt="Tim menyiapkan air minum di titik hidrasi" width="768" height="1365" loading="lazy" decoding="async"><span class="experience-gallery__zoom-hint" aria-hidden="true">Perbesar</span></button><figcaption>Persiapan titik hidrasi</figcaption></figure>
+          </div>
+        </details>
+      </div>
+    </div>
+    <div><div class="when">Februari 2023 sampai sekarang</div><div><h3>Event Organizer, Dyacara</h3><p>Merencanakan dan menjalankan acara lamaran, family gathering, dan ulang tahun. Memantau rangkaian acara, mengoordinasikan runner, dan membawakan rundown.</p></div></div>
+    <div>
+      <div class="when">Juli 2025 sampai sekarang</div>
+      <div>
+        <h3>Game Developer, Six Monkey Studio</h3>
+        <p>Membangun map dan atribut game di Roblox Studio bersama tim. Proyek Gunung Gede via Gunung Putri mencapai 4 juta pengunjung.</p>
+        <details class="experience-docs">
+          <summary><span>Dokumentasi game</span><span class="experience-docs__count">7 gambar</span></summary>
+          <div class="experience-gallery" aria-label="Dokumentasi Game Developer Six Monkey Studio">
+            <figure><button class="experience-gallery__zoom" type="button" aria-label="Perbesar dokumentasi Mount Gede via Gunung Putri"><img src="assets/game-dev/mount-gede-via-gunung-putri.jpeg" alt="Poster game Mount Gede via Gunung Putri" width="500" height="500" loading="lazy" decoding="async"><span class="experience-gallery__zoom-hint" aria-hidden="true">Perbesar</span></button><figcaption>Mount Gede via Gunung Putri</figcaption></figure>
+            <figure><button class="experience-gallery__zoom" type="button" aria-label="Perbesar dokumentasi Nightfall"><img src="assets/game-dev/nightfall-creature-concept.jpeg" alt="Konsep monster untuk game Nightfall" width="768" height="768" loading="lazy" decoding="async"><span class="experience-gallery__zoom-hint" aria-hidden="true">Perbesar</span></button><figcaption>Konsep karakter Nightfall</figcaption></figure>
+            <figure><button class="experience-gallery__zoom" type="button" aria-label="Perbesar proses pembuatan aset Roblox"><img src="assets/game-dev/roblox-studio-character-asset.jpeg" alt="Pembuatan aset karakter dan lingkungan di Roblox Studio" width="768" height="1024" loading="lazy" decoding="async"><span class="experience-gallery__zoom-hint" aria-hidden="true">Perbesar</span></button><figcaption>Aset karakter dan lingkungan</figcaption></figure>
+            <figure><button class="experience-gallery__zoom" type="button" aria-label="Perbesar proses Blender"><img src="assets/game-dev/blender-horror-wall-texture.jpeg" alt="Pemodelan dan tekstur dinding horor di Blender" width="1355" height="768" loading="lazy" decoding="async"><span class="experience-gallery__zoom-hint" aria-hidden="true">Perbesar</span></button><figcaption>Model dan tekstur dinding horor</figcaption></figure>
+            <figure><button class="experience-gallery__zoom" type="button" aria-label="Perbesar tata letak level The Shadows Within"><img src="assets/game-dev/roblox-studio-horror-level-map.jpeg" alt="Tata letak level The Shadows Within di Roblox Studio" width="1262" height="768" loading="lazy" decoding="async"><span class="experience-gallery__zoom-hint" aria-hidden="true">Perbesar</span></button><figcaption>Layout level The Shadows Within</figcaption></figure>
+            <figure><button class="experience-gallery__zoom" type="button" aria-label="Perbesar lingkungan kastel di Roblox Studio"><img src="assets/game-dev/roblox-studio-castle-environment.jpeg" alt="Lingkungan kastel yang dikembangkan di Roblox Studio" width="1262" height="768" loading="lazy" decoding="async"><span class="experience-gallery__zoom-hint" aria-hidden="true">Perbesar</span></button><figcaption>Lingkungan kastel</figcaption></figure>
+            <figure><button class="experience-gallery__zoom" type="button" aria-label="Perbesar prototipe labirin horor"><img src="assets/game-dev/roblox-studio-horror-maze.jpeg" alt="Prototipe tata letak labirin horor di Roblox Studio" width="1260" height="768" loading="lazy" decoding="async"><span class="experience-gallery__zoom-hint" aria-hidden="true">Perbesar</span></button><figcaption>Prototipe labirin horor</figcaption></figure>
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="keahlian" aria-labelledby="keahlian-title">
+  <h2 id="keahlian-title">Keahlian dan sertifikat</h2>
+  <div class="cols sheet">
+    <div><h3>Data</h3><p><b>Python</b> (pandas, NumPy, scikit-learn), <b>SQL</b>, Excel, Power BI, Tableau, Looker Studio. NLP dengan IndoBERT dan LDA.</p></div>
+    <div><h3>Web dan sistem</h3><p><b>Laravel</b>, PHP, JavaScript, MySQL, Streamlit, Figma. Dasar SQL Server dan Oracle.</p></div>
+    <div><h3>Sertifikat</h3><ul>
+      <li><b>BNSP</b> Data Analyst</li>
+      <li>Data Preparation for Business Processes (2025)</li>
+      <li>SQL Server tingkat menengah (2025)</li>
+      <li>JavaScript, Oracle, dan SQL Server dasar</li></ul></div>
+    <div><h3>Pendidikan</h3><p>S1 Sistem Informasi, Universitas Gunadarma, 2022 sampai 2026. IPK 3,51.</p></div>
+  </div>
+</section>
+
+<section id="kontak" aria-labelledby="kontak-title">
+  <h2 id="kontak-title">Mari berbincang</h2>
+  <div class="contact sheet">
+    <p>Saya siap belajar cepat dan memulai kontribusi. Kirim pesan, saya balas secepatnya.</p>
+    <div class="btns">
+      <a href="mailto:mabiyu25@gmail.com">Kirim email</a>
+      <a href="https://www.instagram.com/abiyubismaa/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://github.com/Abysmaa">Lihat GitHub</a>
+      <a href="assets/Resume_Abiyu.pdf" download="Resume_Abiyu.pdf">Unduh CV/Resume</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>Muhammad Abiyu Bisma Reswara Oetama · Tangerang, Banten.</footer>
+</div>
+<button class="back-to-top" type="button" aria-label="Kembali ke atas" tabindex="-1">↑</button>
+<dialog class="photo-viewer" aria-label="Tampilan foto dokumentasi" aria-describedby="photo-viewer-caption">
+  <div class="photo-viewer__header"><button class="photo-viewer__close" type="button" autofocus>Tutup</button></div>
+  <img class="photo-viewer__image" src="" alt="">
+  <p class="photo-viewer__caption" id="photo-viewer-caption"></p>
+</dialog>
+
+<script>
+(function(){
+  var tabs=document.querySelectorAll(".tabs button");
+  var rows=document.querySelectorAll(".rows details");
+  var themeButton=document.querySelector(".theme-toggle");
+  var themeLabel=document.getElementById("theme-label");
+  var progressBar=document.getElementById("scroll-progress-bar");
+  var topButton=document.querySelector(".back-to-top");
+  var galleries=document.querySelectorAll(".experience-gallery");
+  var photoViewer=document.querySelector(".photo-viewer");
+  var viewerImage=photoViewer.querySelector(".photo-viewer__image");
+  var viewerCaption=document.getElementById("photo-viewer-caption");
+  var viewerClose=photoViewer.querySelector(".photo-viewer__close");
+  var reducedMotion=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var prefersDark=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;
+  var hero=document.querySelector(".hero");
+  var heroGrid=hero.querySelector(".grid");
+  var photo=hero.querySelector(".orn.photo");
+  var backgroundScene=document.querySelector(".background-scene");
+  var finePointer=window.matchMedia&&window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+  if(finePointer&&!reducedMotion){
+    var sceneTicking=false;
+    var sceneX=0;
+    var sceneY=0;
+    window.addEventListener("pointermove",function(event){
+      sceneX=((event.clientX/window.innerWidth)-.5)*16;
+      sceneY=((event.clientY/window.innerHeight)-.5)*16;
+      if(!sceneTicking){
+        window.requestAnimationFrame(function(){
+          backgroundScene.style.setProperty("--scene-shift-x",sceneX.toFixed(1)+"px");
+          backgroundScene.style.setProperty("--scene-shift-y",sceneY.toFixed(1)+"px");
+          sceneTicking=false;
+        });
+        sceneTicking=true;
+      }
+    },{passive:true});
+    window.addEventListener("blur",function(){
+      backgroundScene.style.removeProperty("--scene-shift-x");
+      backgroundScene.style.removeProperty("--scene-shift-y");
+    });
+    hero.addEventListener("pointermove",function(event){
+      var bounds=hero.getBoundingClientRect();
+      var x=(event.clientX-bounds.left)/bounds.width-.5;
+      var y=(event.clientY-bounds.top)/bounds.height-.5;
+      heroGrid.style.setProperty("--hero-tilt-x",(-y*3.5).toFixed(2)+"deg");
+      heroGrid.style.setProperty("--hero-tilt-y",(x*4.5).toFixed(2)+"deg");
+      photo.style.setProperty("--photo-tilt-x",(-y*8).toFixed(2)+"deg");
+      photo.style.setProperty("--photo-tilt-y",(x*9).toFixed(2)+"deg");
+    });
+    hero.addEventListener("pointerleave",function(){
+      heroGrid.style.removeProperty("--hero-tilt-x");
+      heroGrid.style.removeProperty("--hero-tilt-y");
+      photo.style.removeProperty("--photo-tilt-x");
+      photo.style.removeProperty("--photo-tilt-y");
+    });
+  }
+
+  function set(m){
+    tabs.forEach(function(b){b.setAttribute("aria-pressed",String(b.dataset.mode===m))});
+    var visible=0;
+    rows.forEach(function(r){
+      r.hidden=m!=="all"&&r.dataset.tags.indexOf(m)===-1;
+      if(!r.hidden){visible++}
+    });
+    document.getElementById("filter-status").textContent=m==="all"?"Semua proyek ditampilkan":visible+" proyek ditampilkan";
+  }
+
+  tabs.forEach(function(b){b.addEventListener("click",function(){set(b.dataset.mode)})});
+  set("all");
+
+  function setTheme(isDark){
+    document.documentElement.dataset.theme=isDark?"dark":"light";
+    themeButton.setAttribute("aria-pressed",String(isDark));
+    themeButton.setAttribute("aria-label",isDark?"Aktifkan tema terang":"Aktifkan tema gelap");
+    themeLabel.textContent=isDark?"Tema terang":"Tema gelap";
+  }
+  setTheme(prefersDark);
+  themeButton.addEventListener("click",function(){
+    setTheme(themeButton.getAttribute("aria-pressed")!=="true");
+  });
+
+  var revealItems=document.querySelectorAll("main section, footer");
+  if("IntersectionObserver" in window){
+    var revealObserver=new IntersectionObserver(function(entries,observer){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },{threshold:.12});
+    revealItems.forEach(function(item){
+      item.classList.add("reveal");
+      revealObserver.observe(item);
+    });
+  }else{
+    revealItems.forEach(function(item){item.classList.add("is-visible")});
+  }
+
+  var ticking=false;
+  function updateScroll(){
+    var maxScroll=document.documentElement.scrollHeight-window.innerHeight;
+    var progress=maxScroll>0?window.scrollY/maxScroll*100:0;
+    progressBar.style.width=Math.min(100,Math.max(0,progress))+"%";
+    var showTop=window.scrollY>420;
+    topButton.classList.toggle("is-visible",showTop);
+    topButton.tabIndex=showTop?0:-1;
+    ticking=false;
+  }
+  window.addEventListener("scroll",function(){
+    if(!ticking){
+      window.requestAnimationFrame(updateScroll);
+      ticking=true;
+    }
+  },{passive:true});
+  updateScroll();
+  topButton.addEventListener("click",function(){
+    window.scrollTo({top:0,behavior:reducedMotion?"auto":"smooth"});
+  });
+  if(typeof photoViewer.showModal==="function"){
+    galleries.forEach(function(gallery){
+      gallery.addEventListener("click",function(event){
+        var button=event.target.closest(".experience-gallery__zoom");
+        if(!button){return}
+        var image=button.querySelector("img");
+        var caption=button.closest("figure").querySelector("figcaption");
+        viewerImage.src=image.currentSrc||image.src;
+        viewerImage.alt=image.alt;
+        viewerCaption.textContent=caption.textContent;
+        photoViewer.showModal();
+      });
+    });
+    viewerClose.addEventListener("click",function(){photoViewer.close()});
+    photoViewer.addEventListener("keydown",function(event){
+      if(event.key==="Escape"){
+        event.preventDefault();
+        photoViewer.close();
+      }
+    });
+    photoViewer.addEventListener("click",function(event){
+      if(event.target===photoViewer){photoViewer.close()}
+    });
+  }
+})();
+</script>
 </body>
 </html>
