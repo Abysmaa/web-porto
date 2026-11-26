@@ -6,7 +6,8 @@ Website portofolio responsif untuk menampilkan proyek, pengalaman, keahlian, dan
 
 - Tampilan responsif dengan pilihan tema terang dan gelap.
 - Animasi latar, efek interaktif, navigasi proyek, dan dukungan reduced motion.
-- Dokumentasi foto Event Lari/Marshall dan Six Monkey Studio dalam galeri yang dapat dibuka-tutup.
+- Dokumentasi Event Lari/Marshall, showcase Six Monkeys Studio, serta dokumentasi visual Dyacara dari versi lokal.
+- Ringkasan audit keamanan Dyacara dengan tautan ke repository, laporan, dan checklist deployment.
 - Pratinjau dashboard analisis sentimen Digi bank bjb.
 - Tautan GitHub, Instagram, dan unduhan resume.
 
@@ -26,8 +27,10 @@ Kemudian buka `http://localhost:4173`.
 index.html
 assets/
   Resume_Abiyu.pdf
+  dyacara/
   event-lari/
   game-dev/
+  six-monkeys/
 ```
 
 Portofolio ini menggunakan HTML, CSS, dan JavaScript tanpa proses build. Berkas gaya, skrip, dan foto profil di luar struktur utama dipertahankan dari versi repository sebelumnya, tetapi tidak digunakan oleh halaman portofolio saat ini.
